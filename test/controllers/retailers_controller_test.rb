@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RetailersControllerTest < ActionController::TestCase
   setup do
-    @retailer = retailers(:one)
+    @retailer =  Retailer.create(name: Faker::Company.name)
   end
 
   test "should get index" do
