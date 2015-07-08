@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  retailer_id: 
+  item_id: 
+  price_id: 
+  product_id: 1
+  on_sale: false
+  sale_price: 
+
+two:
+  retailer_id: 
+  item_id: 
+  price_id: 
+  product_id: 1
+  on_sale: false
+  sale_price: 

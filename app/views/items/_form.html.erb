@@ -1,0 +1,53 @@
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :non_gmo %><br>
+    <%= f.check_box :non_gmo %>
+  </div>
+  <div class="field">
+    <%= f.label :organic %><br>
+    <%= f.check_box :organic %>
+  </div>
+  <div class="field">
+    <%= f.label :total_servings %><br>
+    <%= f.number_field :total_servings %>
+  </div>
+  <div class="field">
+    <%= f.label :servings_unit %><br>
+    <%= f.text_field :servings_unit %>
+  </div>
+  <div class="field">
+    <%= f.label :upc %><br>
+    <%= f.text_field :upc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

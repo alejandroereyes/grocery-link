@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @item.brand %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @item.category %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @item.category_id %>
+</p>
+
+<p>
+  <strong>Non gmo:</strong>
+  <%= @item.non_gmo %>
+</p>
+
+<p>
+  <strong>Organic:</strong>
+  <%= @item.organic %>
+</p>
+
+<p>
+  <strong>Total servings:</strong>
+  <%= @item.total_servings %>
+</p>
+
+<p>
+  <strong>Servings unit:</strong>
+  <%= @item.servings_unit %>
+</p>
+
+<p>
+  <strong>Upc:</strong>
+  <%= @item.upc %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

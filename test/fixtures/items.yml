@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  name: MyString
+  category: MyString
+  category_id: 1
+  non_gmo: false
+  organic: false
+  total_servings: 1
+  servings_unit: MyString
+  upc: MyString
+
+two:
+  brand: MyString
+  name: MyString
+  category: MyString
+  category_id: 1
+  non_gmo: false
+  organic: false
+  total_servings: 1
+  servings_unit: MyString
+  upc: MyString
