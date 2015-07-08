@@ -3,6 +3,4 @@ script:
   - rake db:create db:migrate db:test:prepare
   - rake
 rvm:
-  - 2.2.2
-  - 2.2.1
   - 2.2.0
