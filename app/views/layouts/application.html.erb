@@ -10,6 +10,9 @@
 <div class='container-fluid'>
   <%= render partial: 'partials/navbar' %>
 </div>
+<% if user_is_admin? %>
+  <%= render partial: 'partials/adnav' %>
+<% end %>
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
