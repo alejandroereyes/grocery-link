@@ -20,6 +20,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :manufacturer %><br>
+    <%= f.text_field :manufacturer %>
+  </div>
+  <div class="field">
     <%= f.label :category %><br>
     <%= f.text_field :category %>
   </div>
@@ -28,12 +32,16 @@
     <%= f.number_field :category_id %>
   </div>
   <div class="field">
-    <%= f.label :non_gmo %><br>
-    <%= f.check_box :non_gmo %>
+    <%= f.label :ingredients %><br>
+    <%= f.text_area :ingredients %>
   </div>
   <div class="field">
-    <%= f.label :organic %><br>
-    <%= f.check_box :organic %>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :tags %><br>
+    <%= f.text_field :tags %>
   </div>
   <div class="field">
     <%= f.label :total_servings %><br>
@@ -42,6 +50,10 @@
   <div class="field">
     <%= f.label :servings_unit %><br>
     <%= f.text_field :servings_unit %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
   </div>
   <div class="field">
     <%= f.label :upc %><br>

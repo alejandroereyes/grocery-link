@@ -23,15 +23,20 @@ ActiveRecord::Schema.define(version: 20150708190604) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.string   "brand",                          null: false
+    t.string   "brand"
     t.string   "name",                           null: false
-    t.string   "category",                       null: false
+    t.string   "manufacturer"
+    t.string   "category"
     t.integer  "category_id"
+    t.text     "ingredients"
+    t.text     "description"
     t.boolean  "non_gmo",        default: false
     t.boolean  "organic",        default: false
-    t.integer  "total_servings",                 null: false
-    t.string   "servings_unit",                  null: false
+    t.integer  "total_servings"
+    t.string   "servings_unit"
+    t.real     "weight"
     t.string   "upc"
+    t.string   "tags"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end

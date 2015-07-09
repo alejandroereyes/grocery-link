@@ -2,9 +2,7 @@ require 'test_helper'
 
 class ItemsControllerTest < ActionController::TestCase
   setup do
-    @item = Item.create(brand: Faker::App.name, name: Faker::Commerce.product_name,
-                    total_servings: Faker::Number.number(1), servings_unit: ['g', 'lb', 'oz'].sample,
-                    category: Faker::Lorem.word)
+    @item = items(:one)
   end
 
   test "should get index" do
@@ -20,7 +18,7 @@ class ItemsControllerTest < ActionController::TestCase
 
   test "should create item" do
     assert_difference('Item.count') do
-      post :create, item: { brand: @item.brand, category: @item.category, category_id: @item.category_id, name: @item.name, non_gmo: @item.non_gmo, organic: @item.organic, servings_unit: @item.servings_unit, total_servings: @item.total_servings, upc: @item.upc }
+      post :create, item: { brand: @item.brand, category: @item.category, category_id: @item.category_id, description: @item.description, ingredients: @item.ingredients, manufacturer: @item.manufacturer, name: @item.name, servings_unit: @item.servings_unit, tags: @item.tags, total_servings: @item.total_servings, upc: @item.upc, weight: @item.weight }
     end
 
     assert_redirected_to item_path(assigns(:item))
@@ -37,7 +35,7 @@ class ItemsControllerTest < ActionController::TestCase
   end
 
   test "should update item" do
-    patch :update, id: @item, item: { brand: @item.brand, category: @item.category, category_id: @item.category_id, name: @item.name, non_gmo: @item.non_gmo, organic: @item.organic, servings_unit: @item.servings_unit, total_servings: @item.total_servings, upc: @item.upc }
+    patch :update, id: @item, item: { brand: @item.brand, category: @item.category, category_id: @item.category_id, description: @item.description, ingredients: @item.ingredients, manufacturer: @item.manufacturer, name: @item.name, servings_unit: @item.servings_unit, tags: @item.tags, total_servings: @item.total_servings, upc: @item.upc, weight: @item.weight }
     assert_redirected_to item_path(assigns(:item))
   end
 

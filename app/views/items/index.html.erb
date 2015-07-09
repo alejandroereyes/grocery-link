@@ -7,12 +7,15 @@
     <tr>
       <th>Brand</th>
       <th>Name</th>
+      <th>Manufacturer</th>
       <th>Category</th>
       <th>Category</th>
-      <th>Non gmo</th>
-      <th>Organic</th>
+      <th>Ingredients</th>
+      <th>Description</th>
+      <th>Tags</th>
       <th>Total servings</th>
       <th>Servings unit</th>
+      <th>Weight</th>
       <th>Upc</th>
       <th colspan="3"></th>
     </tr>
@@ -23,12 +26,15 @@
       <tr>
         <td><%= item.brand %></td>
         <td><%= item.name %></td>
+        <td><%= item.manufacturer %></td>
         <td><%= item.category %></td>
         <td><%= item.category_id %></td>
-        <td><%= item.non_gmo %></td>
-        <td><%= item.organic %></td>
+        <td><%= item.ingredients %></td>
+        <td><%= item.description %></td>
+        <td><%= item.tags %></td>
         <td><%= item.total_servings %></td>
         <td><%= item.servings_unit %></td>
+        <td><%= item.weight %></td>
         <td><%= item.upc %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>

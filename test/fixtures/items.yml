@@ -3,21 +3,27 @@
 one:
   brand: MyString
   name: MyString
+  manufacturer: MyString
   category: MyString
   category_id: 1
-  non_gmo: false
-  organic: false
+  ingredients: MyText
+  description: MyText
+  tags: MyString
   total_servings: 1
   servings_unit: MyString
+  weight: 
   upc: MyString
 
 two:
   brand: MyString
   name: MyString
+  manufacturer: MyString
   category: MyString
   category_id: 1
-  non_gmo: false
-  organic: false
+  ingredients: MyText
+  description: MyText
+  tags: MyString
   total_servings: 1
   servings_unit: MyString
+  weight: 
   upc: MyString

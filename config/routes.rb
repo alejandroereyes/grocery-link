@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  resources :stores
+
   resources :items
-  resources :retailers
   devise_for :users
   resources :users
-
+  resources :retailers
   get '/admin/dashboard', to: 'admin#dashboard', as: 'dashboard'
 
   root to: 'users#home'
