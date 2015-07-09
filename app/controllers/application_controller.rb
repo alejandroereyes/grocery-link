@@ -4,13 +4,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-
-  def im_link
-    connection = InformationMachineApi::ProductsController.new ENV['client_id'], ENV['client_secret']
+  def user_is_admin?
+    @user_is_admin ||= current_user ? current_user.admin : false
   end
 
-  def im_lookup
-    connect = InformationMachineApi::LookupController.new ENV['client_id'], ENV['client_secret']
+  def current_retailer
+    @current_retailer ||= current_user.retailer if current_user && current_user.retailer
+  end
+
+  def current_retailer_id
+    current_retailer.id
   end
 
   protected
