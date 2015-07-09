@@ -2,7 +2,10 @@ require 'test_helper'
 
 class ItemsControllerTest < ActionController::TestCase
   setup do
-    @item = items(:one)
+    category = Category.create(name: ['fish', 'beef', 'frozen'].sample)
+    @item = Item.create(brand: Faker::App.name, name: Faker::Commerce.product_name, manufacturer: Faker::Company.name, ingredients: Faker::Lorem.sentence,
+                        description: Faker::Lorem.sentence, category: category.name, category_id: category.id, upc: Faker::Number.number(8), tags: Faker::Lorem.words(3),
+                        total_servings: Faker::Number.number(1), servings_unit: ['g', 'lb', 'oz'].sample, weight: Faker::Number.number(1))
   end
 
   test "should get index" do

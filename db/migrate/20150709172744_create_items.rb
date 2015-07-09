@@ -11,7 +11,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :tags
       t.integer :total_servings
       t.string :servings_unit
-      t.real :weight
+      t.decimal :weight
       t.string :upc
 
       t.timestamps null: false

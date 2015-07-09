@@ -2,7 +2,8 @@ require 'test_helper'
 
 class RetailersControllerTest < ActionController::TestCase
   setup do
-    @retailer = retailers(:one)
+    names = ['Whole Foods Market', 'HEB', 'Randalls', 'Trader Joe', 'Sprouts', 'Natural Grocer', 'Target', 'Walmart']
+    @retailer = Retailer.create(name: names.sample)
   end
 
   test "should get index" do

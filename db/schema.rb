@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708190604) do
+ActiveRecord::Schema.define(version: 20150709173001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,21 +24,19 @@ ActiveRecord::Schema.define(version: 20150708190604) do
 
   create_table "items", force: :cascade do |t|
     t.string   "brand"
-    t.string   "name",                           null: false
+    t.string   "name"
     t.string   "manufacturer"
     t.string   "category"
     t.integer  "category_id"
     t.text     "ingredients"
     t.text     "description"
-    t.boolean  "non_gmo",        default: false
-    t.boolean  "organic",        default: false
+    t.string   "tags"
     t.integer  "total_servings"
     t.string   "servings_unit"
-    t.real     "weight"
+    t.decimal  "weight"
     t.string   "upc"
-    t.string   "tags"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "prices", force: :cascade do |t|
@@ -52,10 +50,10 @@ ActiveRecord::Schema.define(version: 20150708190604) do
     t.integer  "item_id"
     t.integer  "price_id"
     t.integer  "product_id"
-    t.boolean  "on_sale",               default: false
+    t.boolean  "on_sale"
     t.money    "sale_price",  scale: 2
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   add_index "retailer_item_prices", ["item_id"], name: "index_retailer_item_prices_on_item_id", using: :btree
@@ -63,8 +61,8 @@ ActiveRecord::Schema.define(version: 20150708190604) do
   add_index "retailer_item_prices", ["retailer_id"], name: "index_retailer_item_prices_on_retailer_id", using: :btree
 
   create_table "retailer_users", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "retailer_id"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -73,7 +71,7 @@ ActiveRecord::Schema.define(version: 20150708190604) do
   add_index "retailer_users", ["user_id"], name: "index_retailer_users_on_user_id", using: :btree
 
   create_table "retailers", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -92,18 +90,18 @@ ActiveRecord::Schema.define(version: 20150708190604) do
   add_index "stores", ["retailer_id"], name: "index_stores_on_retailer_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",                                   null: false
-    t.boolean  "admin",                  default: false
+    t.string   "name"
+    t.boolean  "admin"
     t.string   "client_id"
     t.string   "secret_id"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
