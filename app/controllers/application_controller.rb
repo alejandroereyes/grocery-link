@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
   def im_lookup
     connect = InformationMachineApi::LookupController.new ENV['client_id'], ENV['client_secret']
   end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :name
+  end
 end

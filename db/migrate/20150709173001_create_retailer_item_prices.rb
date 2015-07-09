@@ -5,7 +5,7 @@ class CreateRetailerItemPrices < ActiveRecord::Migration
       t.belongs_to :item, index: true, foreign_key: true
       t.belongs_to :price, index: true, foreign_key: true
       t.integer :product_id
-      t.boolean :on_sale
+      t.boolean :on_sale, default: false
       t.string :sale_price
 
       t.timestamps null: false

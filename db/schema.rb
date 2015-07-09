@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 20150709173001) do
     t.integer  "item_id"
     t.integer  "price_id"
     t.integer  "product_id"
-    t.boolean  "on_sale"
+    t.boolean  "on_sale",     default: false
     t.string   "sale_price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "retailer_item_prices", ["item_id"], name: "index_retailer_item_prices_on_item_id", using: :btree
@@ -91,17 +91,17 @@ ActiveRecord::Schema.define(version: 20150709173001) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "admin"
+    t.boolean  "admin",                  default: false
     t.string   "client_id"
     t.string   "secret_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
