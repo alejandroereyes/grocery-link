@@ -33,16 +33,16 @@ ActiveRecord::Schema.define(version: 20150709173001) do
     t.string   "tags"
     t.integer  "total_servings"
     t.string   "servings_unit"
-    t.decimal  "weight"
+    t.string   "weight"
     t.string   "upc"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
   create_table "prices", force: :cascade do |t|
-    t.money    "cost",       scale: 2, null: false
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.string   "cost",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "retailer_item_prices", force: :cascade do |t|
@@ -51,9 +51,9 @@ ActiveRecord::Schema.define(version: 20150709173001) do
     t.integer  "price_id"
     t.integer  "product_id"
     t.boolean  "on_sale"
-    t.money    "sale_price",  scale: 2
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.string   "sale_price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "retailer_item_prices", ["item_id"], name: "index_retailer_item_prices_on_item_id", using: :btree
