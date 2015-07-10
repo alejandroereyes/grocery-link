@@ -33,6 +33,7 @@ class RetailersController < ApplicationController
   end
 
   def destroy
+    @retailer = Retailer.find(params[:id])
     @retailer.destroy
     redirect_to retailers_url, notice: 'Retailer was successfully destroyed.'
   end
