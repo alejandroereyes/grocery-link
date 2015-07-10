@@ -2,10 +2,11 @@ class ItemsController < ApplicationController
 
   def index
     retailer = Retailer.find(current_retailer_id)
-    @items = Item.all
+    @items = retailer.items.paginate(:page => params[:page], :per_page => 30)
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def new
@@ -13,6 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def create

@@ -1,19 +1,16 @@
 
 <h1>Listing Items</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Brand</th>
       <th>Name</th>
       <th>Manufacturer</th>
       <th>Category</th>
-      <th>Category</th>
-      <th>Ingredients</th>
-      <th>Description</th>
       <th>Tags</th>
-      <th>Total servings</th>
-      <th>Servings unit</th>
+      <th>Total Servings</th>
+      <th>Unit</th>
       <th>Weight</th>
       <th>Upc</th>
       <th colspan="3"></th>
@@ -27,10 +24,7 @@
         <td><%= item.name %></td>
         <td><%= item.manufacturer %></td>
         <td><%= item.category %></td>
-        <td><%= item.category_id %></td>
-        <td><%= item.ingredients %></td>
-        <td><%= item.description %></td>
-        <td><%= item.tags %></td>
+        <td><%= item.tags.gsub('[','').gsub(']', '').gsub(/["]/, '') %></td>
         <td><%= item.total_servings %></td>
         <td><%= item.servings_unit %></td>
         <td><%= item.weight %></td>
@@ -44,5 +38,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Item', new_item_path %>
+<div class="center">
+  <%= will_paginate @stores, renderer: BootstrapPagination::Rails %>
+</div>
