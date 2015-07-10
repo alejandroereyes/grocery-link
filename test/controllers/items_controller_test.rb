@@ -8,11 +8,11 @@ class ItemsControllerTest < ActionController::TestCase
     category = Category.create(name: ['fish', 'beef', 'frozen'].sample)
     @item = Item.create(brand: Faker::App.name, name: Faker::Commerce.product_name, manufacturer: Faker::Company.name, ingredients: Faker::Lorem.sentence,
                         description: Faker::Lorem.sentence, category: category.name, category_id: category.id, upc: Faker::Number.number(8), tags: Faker::Lorem.words(3),
-                        total_servings: Faker::Number.number(1), servings_unit: ['g', 'lb', 'oz'].sample, weight: Faker::Number.number(1))
+                        total_servings: Faker::Number.number(1), servings_unit: ['g', 'lb', 'oz'].sample, weight: Faker::Number.number(1), price: Faker::Commerce.price)
     @request.env["devise.mapping"] = Devise.mappings[:user]
     @request.env["HTTP_REFERER"]   = 'http://localhost:3000/'
     @controller.stubs(:current_user).returns(@user)
-    @controller.stubs(:user_retailer).returns(retailer)
+    @controller.stubs(:current_retailer).returns([retailer])
     sign_in @user
   end
 
@@ -29,7 +29,9 @@ class ItemsControllerTest < ActionController::TestCase
 
   test "should create item" do
     assert_difference('Item.count') do
-      post :create, item: { brand: @item.brand, category: @item.category, category_id: @item.category_id, description: @item.description, ingredients: @item.ingredients, manufacturer: @item.manufacturer, name: @item.name, servings_unit: @item.servings_unit, tags: @item.tags, total_servings: @item.total_servings, upc: @item.upc, weight: @item.weight }
+      post :create, item: { brand: @item.brand, category: @item.category, category_id: @item.category_id, description: @item.description,
+                      ingredients: @item.ingredients, manufacturer: @item.manufacturer, name: @item.name, servings_unit: @item.servings_unit,
+                             tags: @item.tags, total_servings: @item.total_servings, upc: @item.upc, weight: @item.weight, price: @item.price }
     end
 
     assert_redirected_to item_path(assigns(:item))

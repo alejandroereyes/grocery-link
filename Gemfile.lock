@@ -108,10 +108,13 @@ GEM
       json (>= 1.7.7, < 2.0)
     mandrill_dm (1.2.0)
       mandrill-api (~> 1.0.53)
+    metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.7.0)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
     multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -234,6 +237,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mandrill_dm
+  mocha (~> 1.1)
   pg
   pry
   puma
