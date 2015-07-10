@@ -1,0 +1,26 @@
+<h1>Stores</h1>
+<table class="table table-hover">
+ <thead>
+    <tr>
+      <th>Store ID</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stores.each do |store| %>
+      <tr>
+        <td><%= store.store_id %></td>
+        <td><%= store.street.titleize %></td>
+        <td><%= store.city.titleize %></td>
+        <td><%= store.state %></td>
+        <td><%= store.zip %></td>
+      <tr>
+     <% end %>
+  </tbody>
+</table>
+<div class="center">
+  <%= will_paginate @stores, renderer: BootstrapPagination::Rails %>
+</div>

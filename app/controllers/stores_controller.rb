@@ -4,7 +4,8 @@ class StoresController < ApplicationController
   end
 
   def index
-    @stores = Store.where(retailer_id: current_retailer_id)
+    stores = Store.where(retailer_id: current_retailer_id)
+    @stores = stores.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

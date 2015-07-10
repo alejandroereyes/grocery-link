@@ -6,11 +6,12 @@
     </ul>
   </div>
   <div class='col-md-2'><ul class='nav nav-pills'>
-  <% if current_user %>
-    <li role="presentation" class=<%= active_if(destroy_user_session_path) %>><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-  <% else %>
-    <li role="presentation" class=<%= active_if(new_user_session_path) %>><a href="/users/sign_in">Log In</a></li>
-  <% end %>
-  <li role="presentation" class=<%= active_if(new_user_registration_path)%>><%= link_to "Sign Up", new_user_registration_path %></li>
-  </ul></div>
+    <% if current_user %>
+      <li role="presentation" class=<%= active_if(destroy_user_session_path) %>><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li role="presentation" class=<%= active_if(new_user_session_path) %>><a href="/users/sign_in">Log In</a></li>
+    <% end %>
+    <li role="presentation" class=<%= active_if(new_user_registration_path)%>><%= link_to "Sign Up", new_user_registration_path %></li>
+    </ul>
+  </div>
 </div>
