@@ -24,8 +24,9 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-
     if @item.save
+      price = Price.add_if_new(price_params)
+      RetailerItemPrice.add_or_update(price.id, @item, current_retailer_id)
       redirect_to @item, notice: 'Item was successfully created.'
     else
       render :new
@@ -52,6 +53,6 @@ class ItemsController < ApplicationController
     end
 
     def price_params
-      params.require(:item).permet(:price)
+      params.require(:item).permit(:price)
     end
 end
