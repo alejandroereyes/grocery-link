@@ -22,3 +22,6 @@
   <strong>Zip Code:</strong>
   <%= @store.zip %>
 </p>
+
+<%= link_to "Edit", edit_store_path(@store.id) %> |
+<%= link_to "Delete", store_path(@store.id), method: :delete %>

@@ -22,6 +22,7 @@ class StoresController < ApplicationController
   end
 
   def edit
+    @store = Store.find(params[:id])
   end
 
   def create

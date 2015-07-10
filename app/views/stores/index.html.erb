@@ -7,16 +7,20 @@
       <th>City</th>
       <th>State</th>
       <th>Zip Code</th>
+      <th>Edit Store</th>
+      <th>Remove Store</th>
     </tr>
   </thead>
   <tbody>
     <% @stores.each do |store| %>
       <tr>
-        <td><%= store.store_id %></td>
+        <td><%= link_to "#{store.store_id}", store_path(store.id) %></td>
         <td><%= store.street.titleize %></td>
         <td><%= store.city.titleize %></td>
         <td><%= store.state %></td>
         <td><%= store.zip %></td>
+        <td><%= link_to "Edit", edit_store_path(store.id) %></td>
+        <td><%= link_to "Delete", store_path(store.id), method: :delete %></td>
       <tr>
      <% end %>
   </tbody>
