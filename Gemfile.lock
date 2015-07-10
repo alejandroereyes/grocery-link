@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/information-machine/information-machine-api-ruby.git
+  revision: fdf761207b8789fb9f67bc3d494b67354fb85de9
+  specs:
+    information_machine_api (1.0)
+      unirest (~> 1.1.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -84,8 +91,6 @@ GEM
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
-    information_machine_api (1.0)
-      unirest (~> 1.1.2)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -225,7 +230,7 @@ DEPENDENCIES
   devise
   faker
   figaro
-  information_machine_api (~> 1.0)
+  information_machine_api!
   jbuilder (~> 2.0)
   jquery-rails
   mandrill_dm
