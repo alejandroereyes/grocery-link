@@ -1,7 +1,12 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
-
+if ENV['CI']
+    require 'codeclimate_batch'
+    CodeclimateBatch.start
+end
+# require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
 include Devise::TestHelpers
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.

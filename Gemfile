@@ -44,7 +44,7 @@ group :development, :test do
   gem 'pry'
   gem 'faker'
 end
-
+gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'bullet', group: :development
 gem 'bootstrap-sass'
 gem 'react-rails'

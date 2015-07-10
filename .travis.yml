@@ -4,3 +4,6 @@ script:
   - rake
 rvm:
   - 2.2.0
+addons:
+  code_climate:
+    repo_token: 1a1fd206014a1f4f647be5c2e5a8fd2ed3f846d84b6c349e832b46560b021f5f
