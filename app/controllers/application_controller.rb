@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_retailer_id
-    current_retailer.id
+    current_retailer.first.id
   end
 
   protected

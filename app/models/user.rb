@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :retailer_user
-  has_one :retailer, through: :retailer_user
+  has_many :retailer, through: :retailer_user
 end

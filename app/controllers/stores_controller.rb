@@ -8,7 +8,7 @@ class StoresController < ApplicationController
   end
 
   def show
-    store = store.find(params[:id])
+    store = Store.find(params[:id])
     if store.retailer_id = current_retailer_id
       @store = store
     else
@@ -28,22 +28,19 @@ class StoresController < ApplicationController
     @store.city = @store.city.downcase
     @store.retailer_id = current_retailer_id
 
-    if @item.save
+    if @store.save
       redirect_to @store, notice: 'Store was successfully created.'
     else
       render :new
     end
-
   end
 
   def update
-
     if @store.update(store_params)
       redirect_to @store, notice: 'Store was successfully updated.'
     else
       render :edit
     end
-
   end
 
   def destroy
@@ -53,7 +50,7 @@ class StoresController < ApplicationController
 
   private
 
-    def item_params
+    def store_params
       params.require(:store).permit(:store_id, :street, :city, :state, :zip)
     end
 end
