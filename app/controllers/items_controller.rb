@@ -17,6 +17,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def import
+    Item.import(params[:file])
+    redirect_to :back, notice: "File imported."
+  end
+
   def create
     @item = Item.new(item_params)
 

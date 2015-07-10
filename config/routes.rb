@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :items
+  post 'items/import', to: 'items#import', as: 'import_item'
   devise_for :users
   resources :users
   resources :retailers
