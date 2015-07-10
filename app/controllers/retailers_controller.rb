@@ -5,6 +5,7 @@ class RetailersController < ApplicationController
   end
 
   def show
+    @retailer = current_retailer.first
   end
 
   def new
@@ -12,6 +13,7 @@ class RetailersController < ApplicationController
   end
 
   def edit
+    @retailer = current_retailer.first
   end
 
   def create
@@ -25,6 +27,7 @@ class RetailersController < ApplicationController
   end
 
   def update
+    @retailer = current_retailer.first
     if @retailer.update(retailer_params)
       redirect_to @retailer, notice: 'Retailer was successfully updated.'
     else
