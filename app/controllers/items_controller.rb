@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
+    retailer = Retailer.find(current_retailer_id)
     @items = Item.all
   end
 
