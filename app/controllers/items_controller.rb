@@ -25,8 +25,10 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      price = Price.add_if_new(price_params)
-      RetailerItemPrice.add_or_update(price.id, @item, current_retailer_id)
+      Itemhelp.save_price_n_link(current_retailer_id, @item, price_params)
+
+      # price = Price.add_if_new(price_params)
+      # RetailerItemPrice.add_or_update(price.id, @item, current_retailer_id)
       redirect_to @item, notice: 'Item was successfully created.'
     else
       render :new
