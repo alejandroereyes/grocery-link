@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     @user_is_admin ||= current_user ? current_user.admin : false
   end
 
+  def only_admins
+    redirect_to root_path unless current_user && user_is_admin?
+  end
+
   def current_retailer
     @current_retailer ||= current_user.retailer if current_user && current_user.retailer
   end
@@ -23,7 +27,6 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
   end

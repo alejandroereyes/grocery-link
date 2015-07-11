@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-  before_filter do
-    redirect_to root_path unless current_user && user_is_admin?
-  end
+  before_filter :only_admins
 
   def index
     @users = current_retailer.first.users
@@ -16,11 +14,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      Welcome.send_keys_to(@user).deliver_now
       redirect_to @user, notice: 'User was successfully updated.'
     else
       render :edit
-      end
+    end
   end
 
   def destroy
@@ -29,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:name, :admin, :client_id, :secret_id)
-    end
+  def user_params
+    params.require(:user).permit(:name, :admin, :client_id, :secret_id)
+  end
 end
