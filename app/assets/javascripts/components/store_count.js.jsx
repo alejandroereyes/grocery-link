@@ -9,9 +9,11 @@ var StoreCountContainer = React.createClass({
   },
 
   fetchStoreCount: function () {
-    $.get(this.props.url, function (data) {
+    $.get(
+      this.props.url, function (data) {
       // this.setState({storeCount: data});
-    }.bind(this));
+      }.bind(this)
+    );
   },
 
   getInitialState() {
