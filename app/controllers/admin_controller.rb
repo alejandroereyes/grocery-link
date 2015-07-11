@@ -4,7 +4,7 @@ class AdminController < ApplicationController
   end
 
   def dashboard
-   @user = current_user
    @store_count = current_stores.count
+   @item_count = current_retailer.first.items.count
   end
 end
