@@ -9,6 +9,15 @@ class Api::LookupController < ApplicationController
     end
   end
 
+  def retailers
+    if verify_client(tokens)
+      @all_retailers = Retailer.all
+      render json: @all_retailers
+    else
+      error
+    end
+  end
+
   private
   def tokens
     params.permit(:client_id, :secret_id)

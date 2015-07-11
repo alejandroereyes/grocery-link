@@ -4,7 +4,7 @@ Rails.application.routes.draw do
                   constraints: { subdomain: 'api' }, path: '/'  do
   end
   get '/api/lookup/categories', to: 'api/lookup#categories', as: 'categories'
-
+  get '/api/lookup/retailers', to: 'api/lookup#retailers', as: 'retailers'
   devise_for :users
 
   # authenticate :employee do
