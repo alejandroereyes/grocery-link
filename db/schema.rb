@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150710054009) do
   create_table "retailer_item_prices", force: :cascade do |t|
     t.integer  "retailer_id"
     t.integer  "item_id"
-    t.string  "price",                        null: false
+    t.string   "price",                       null: false
     t.integer  "product_id"
     t.boolean  "on_sale",     default: false
     t.string   "sale_price"

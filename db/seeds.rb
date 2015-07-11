@@ -19,11 +19,11 @@ cities = ['Austin', 'Round Rock', 'Katy', 'Dallas', 'San Marcos', 'San Antonio',
 
 bool = [true, false]
 
-names = ["Amy's", 'evol', 'totinos', 'organic valley', 'ice cream', 'tuna', 'beef', 'chicken', 'jam', 'bread', 'milk', 'peanut butter', 'mustard', 'ketchup', 'pancake', 'blueberry'
+names = ["Amy's", 'evol', 'totinos', 'organic valley', 'ice cream', 'tuna', 'beef', 'chicken', 'jam', 'bread', 'milk', 'peanut butter', 'mustard', 'ketchup', 'pancake',
          'potato', 'squash', 'pasta', 'sauce', 'kombucha', 'coffee', 'seasoning', 'tender', 'tortilla', 'hummus', 'olive', 'oil', 'shrimp', 'crab', 'oyster', 'smoked', 'waffle',
          'bagel', 'danish', 'doughnut', 'chocolate', 'candy', 'gum', 'cola', 'root beer', 'cherry cola', 'diet cola', 'gerber', 'taco', 'pad thai', 'chili', 'soup', 'stew',
          'hot dog', 'sausage', 'flour', 'sugar', 'spicy', 'mild', 'medium', 'orange', 'strawberry', 'apple', 'lime', 'lemon', 'pineapple', 'mango', 'guava', 'banana', 'coconut',
-         'grape', 'corn', 'bean', 'queso', 'cheese', 'goat', 'asiago', 'wine', 'cake', 'tart', 'ale', 'egg', 'sour cream', 'yogurt', 'ghee', 'tomato', 'gravy', 'curry', 'melon']
+         'grape', 'corn', 'bean', 'queso', 'cheese', 'goat', 'asiago', 'wine', 'cake', 'tart', 'ale', 'egg', 'sour cream', 'yogurt', 'ghee', 'tomato', 'gravy']
 
 ['Whole Foods Market', 'HEB', 'Randalls', 'Trader Joe', 'Sprouts', 'Natural Grocer', 'Target', 'Walmart'].each do |company|
   store_count = 1000
