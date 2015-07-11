@@ -2,8 +2,8 @@ require 'test_helper'
 
 class ItemsControllerTest < ActionController::TestCase
   setup do
-    retailer  = Retailer.create(name: 'foobar')
-    @user = User.create(email: 'user@example.com', password: 'foobar', admin: true, name: 'foobey')
+    retailer  = Retailer.create(name: Faker::Company.name)
+    @user = User.create(email: Faker::Internet.email, password: 'password', admin: true, name: Faker::Name.name)
     link = RetailerUser.create(retailer_id: retailer.id, user_id: @user.id)
     category = Category.create(name: ['fish', 'beef', 'frozen'].sample)
     @item = Item.create(brand: Faker::App.name, name: Faker::Commerce.product_name, manufacturer: Faker::Company.name, ingredients: Faker::Lorem.sentence,

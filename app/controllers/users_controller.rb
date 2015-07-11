@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      Welcome.send_keys_to(@user).deliver_now
       redirect_to @user, notice: 'User was successfully updated.'
     else
       render :edit
