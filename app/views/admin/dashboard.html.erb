@@ -11,4 +11,10 @@
       <div class="panel-body"><%= @item_count %></div>
     </div>
   </div>
+  <div class='col-md-2 col-md-offset-1'>
+    <div class="panel panel-default">
+      <div class="panel-heading">Organics Count</div>
+      <div class="panel-body"><%= organics_for(current_retailer).count %></div>
+    </div>
+  </div>
 </div>
