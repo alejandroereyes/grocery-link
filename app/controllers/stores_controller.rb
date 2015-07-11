@@ -1,7 +1,5 @@
 class StoresController < ApplicationController
-  before_filter do
-    redirect_to root_path unless current_user && user_is_admin?
-  end
+  before_filter :only_admins
 
   def index
     stores = Store.where(retailer_id: current_retailer_id)
