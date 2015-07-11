@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json },
                   constraints: { subdomain: 'api' }, path: '/'  do
   end
+  get '/api/lookup/categories', to: 'api/lookup#categories', as: 'categories'
 
   devise_for :users
 

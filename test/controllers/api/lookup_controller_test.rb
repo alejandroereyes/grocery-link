@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Api::LookUpControllerTest < ActionController::TestCase
+class Api::LookupControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end
