@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  before_filter do
+    redirect_to root_path unless current_user && user_is_admin?
+  end
 
   def index
     retailer = Retailer.find(current_retailer_id)

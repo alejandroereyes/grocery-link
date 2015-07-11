@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
+  before_filter do
+    redirect_to root_path unless current_user && user_is_admin?
+  end
 
   def index
-    @users = User.all
+    @users = current_retailer.first.users
   end
 
   def show
     @user = current_user
-  end
-
-  def home
   end
 
   def edit

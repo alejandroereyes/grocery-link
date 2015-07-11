@@ -7,4 +7,3 @@ class Welcome < ApplicationMailer
     mail to: user.email, subject: "Welcome to groceryLink :)"
   end
 end
-end

@@ -4,15 +4,19 @@ Rails.application.routes.draw do
                   constraints: { subdomain: 'api' }, path: '/'  do
   end
 
-  resources :items
-  post 'items/import', to: 'items#import', as: 'import_item'
   devise_for :users
-  resources :users
-  resources :retailers
-  resources :stores
-  get '/admin/dashboard', to: 'admin#dashboard', as: 'dashboard'
 
-  root to: 'users#home'
+  # authenticate :employee do
+
+    resources :items
+    post 'items/import', to: 'items#import', as: 'import_item'
+    resources :users
+    resources :retailers
+    resources :stores
+    get '/admin/dashboard', to: 'admin#dashboard', as: 'dashboard'
+  # end
+
+  root to: 'api/welcome#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
