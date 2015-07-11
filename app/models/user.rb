@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :retailer_user
+  has_many :retailer_user, dependent: :destroy
   has_many :retailer, through: :retailer_user
   after_create :add_tokens
 

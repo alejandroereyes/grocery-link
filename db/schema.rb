@@ -40,16 +40,10 @@ ActiveRecord::Schema.define(version: 20150710054009) do
     t.string   "price"
   end
 
-  create_table "prices", force: :cascade do |t|
-    t.string   "cost",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "retailer_item_prices", force: :cascade do |t|
     t.integer  "retailer_id"
     t.integer  "item_id"
-    t.integer  "price_id"
+    t.string  "price",                        null: false
     t.integer  "product_id"
     t.boolean  "on_sale",     default: false
     t.string   "sale_price"
@@ -58,7 +52,6 @@ ActiveRecord::Schema.define(version: 20150710054009) do
   end
 
   add_index "retailer_item_prices", ["item_id"], name: "index_retailer_item_prices_on_item_id", using: :btree
-  add_index "retailer_item_prices", ["price_id"], name: "index_retailer_item_prices_on_price_id", using: :btree
   add_index "retailer_item_prices", ["retailer_id"], name: "index_retailer_item_prices_on_retailer_id", using: :btree
 
   create_table "retailer_users", force: :cascade do |t|
@@ -113,7 +106,6 @@ ActiveRecord::Schema.define(version: 20150710054009) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "retailer_item_prices", "items"
-  add_foreign_key "retailer_item_prices", "prices"
   add_foreign_key "retailer_item_prices", "retailers"
   add_foreign_key "retailer_users", "retailers"
   add_foreign_key "retailer_users", "users"

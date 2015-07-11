@@ -19,11 +19,11 @@ cities = ['Austin', 'Round Rock', 'Katy', 'Dallas', 'San Marcos', 'San Antonio',
 
 bool = [true, false]
 
-names = ["Amy's", 'evol', 'totinos', 'organic valley', 'ice cream', 'tuna', 'beef', 'chicken', 'jam', 'bread', 'milk', 'peanut butter', 'mustard', 'ketchup', 'pancake',
+names = ["Amy's", 'evol', 'totinos', 'organic valley', 'ice cream', 'tuna', 'beef', 'chicken', 'jam', 'bread', 'milk', 'peanut butter', 'mustard', 'ketchup', 'pancake', 'blueberry'
          'potato', 'squash', 'pasta', 'sauce', 'kombucha', 'coffee', 'seasoning', 'tender', 'tortilla', 'hummus', 'olive', 'oil', 'shrimp', 'crab', 'oyster', 'smoked', 'waffle',
          'bagel', 'danish', 'doughnut', 'chocolate', 'candy', 'gum', 'cola', 'root beer', 'cherry cola', 'diet cola', 'gerber', 'taco', 'pad thai', 'chili', 'soup', 'stew',
          'hot dog', 'sausage', 'flour', 'sugar', 'spicy', 'mild', 'medium', 'orange', 'strawberry', 'apple', 'lime', 'lemon', 'pineapple', 'mango', 'guava', 'banana', 'coconut',
-         'grape', 'corn', 'bean', 'queso', 'cheese', 'goat', 'asiago', 'wine', 'cake', 'tart', 'ale', 'egg', 'sour cream', 'yogurt', 'ghee', 'tomato', 'gravy']
+         'grape', 'corn', 'bean', 'queso', 'cheese', 'goat', 'asiago', 'wine', 'cake', 'tart', 'ale', 'egg', 'sour cream', 'yogurt', 'ghee', 'tomato', 'gravy', 'curry', 'melon']
 
 ['Whole Foods Market', 'HEB', 'Randalls', 'Trader Joe', 'Sprouts', 'Natural Grocer', 'Target', 'Walmart'].each do |company|
   store_count = 1000
@@ -58,8 +58,7 @@ end
 
 Item.all.each do |item|
   Retailer.all.each do |retailer|
-    price = Price.create(cost: Faker::Commerce.price)
 
-    RetailerItemPrice.create(retailer_id: retailer.id, item_id: item.id, price_id: price.id)
+    RetailerItemPrice.create(retailer_id: retailer.id, item_id: item.id, price: Faker::Commerce.price)
   end
 end

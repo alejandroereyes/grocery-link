@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :api, defaults: { format: :json },
+                  constraints: { subdomain: 'api' }, path: '/'  do
+  end
+
   resources :items
   post 'items/import', to: 'items#import', as: 'import_item'
   devise_for :users
