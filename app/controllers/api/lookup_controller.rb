@@ -20,6 +20,10 @@ class Api::LookupController < ApiController
 
   def retailers_in_area
     @area_stores = Store.found_for_city_from(store_params)
+
+    if !(@area_stores.first)
+      render json: { message: "No Stores Found in #{params['city']}, #{params['state']}" }
+    end
   end
 
   private

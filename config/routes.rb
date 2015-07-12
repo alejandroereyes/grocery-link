@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get 'lookup/retailers', to: '/api/lookup#retailers', as: 'retailers'
     get 'lookup/categories', to: '/api/lookup#categories', as: 'categories'
     get 'lookup/retailersinarea', to: '/api/lookup#retailers_in_area', as: 'area_reatailers'
+    get 'products/byname', to: '/api/products#products_by_name', as: 'products_by_name'
   end
 
   devise_for :users
