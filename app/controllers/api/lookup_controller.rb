@@ -1,4 +1,4 @@
-class Api::LookupController < ApplicationController
+class Api::LookupController < ApiController
 
   def categories
     if verify_client(tokens)
@@ -18,7 +18,15 @@ class Api::LookupController < ApplicationController
     end
   end
 
+  def retailers_in_area
+    @area_stores = Store.found_for_city_from(store_params)
+  end
+
   private
+  def store_params
+    params.permit(:city, :state)
+  end
+
   def tokens
     params.permit(:client_id, :secret_id)
   end

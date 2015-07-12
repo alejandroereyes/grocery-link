@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  namespace :api, defaults: { format: :json },
-                  constraints: { subdomain: 'api' }, path: '/'  do
+  namespace :api, defaults: { format: :json } do
+    get 'lookup/retailers', to: '/api/lookup#retailers', as: 'retailers'
+    get 'lookup/categories', to: '/api/lookup#categories', as: 'categories'
+    get 'lookup/retailersinarea', to: '/api/lookup#retailers_in_area', as: 'area_reatailers'
   end
-  get '/api/lookup/categories', to: 'api/lookup#categories', as: 'categories'
-  get '/api/lookup/retailers', to: 'api/lookup#retailers', as: 'retailers'
+
   devise_for :users
 
   # authenticate :employee do
