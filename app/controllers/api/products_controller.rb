@@ -9,6 +9,12 @@ class Api::ProductsController < ApiController
     end
   end
 
+  def product_by_id
+    @product = Item.find(id_params)
+    # @product = @product.retailers
+    # render json: @product
+  end
+
   private
   def tokens
     params.permit(:client_id, :secret_id)
@@ -16,5 +22,9 @@ class Api::ProductsController < ApiController
 
   def name_params
     params.permit(:name).first
+  end
+
+  def id_params
+    params.permit(:id).first[1]
   end
 end
