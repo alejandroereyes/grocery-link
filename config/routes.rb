@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     get '/admin/dashboard', to: 'admin#dashboard', as: 'dashboard'
   # end
 
+  get 'api/docs', to: 'api/welcome#docs', as: "docs"
   root to: 'api/welcome#home'
 end

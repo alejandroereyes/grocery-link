@@ -2,7 +2,8 @@
   <div class='col-md-10'>
     <ul class="nav nav-pills">
       <li role="presentation" class=<%= active_if(root_path) %>><a href="/">Home</a></li>
-
+      <li role="presentation" class=<%= active_if(docs_path) %>><%= link_to 'Docs', docs_path %></li>
+      <% if user_is_admin? %><%= render partial: 'partials/adnav' %><% end %>
     </ul>
   </div>
   <div class='col-md-2'><ul class='nav nav-pills'>
