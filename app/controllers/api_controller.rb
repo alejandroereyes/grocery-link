@@ -5,7 +5,7 @@ class ApiController < ApplicationController
     is_a_client
   end
 
-  def error
+  def need_ids_error
     render json: { error: "Client id and  Secret id needed" }, status: 407
   end
 

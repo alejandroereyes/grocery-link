@@ -1,6 +1,7 @@
 class Api::ProductsController < ApiController
 
   def products_by_name
+    # need 404 rescue, need verify tokens
     @products = Item.where("name LIKE ?", "%#{name_params[1]}%")
     if @products.first
       render json: @products
@@ -10,7 +11,11 @@ class Api::ProductsController < ApiController
   end
 
   def product_by_id
-    @product = Item.find(id_params) #rescue with not_found(params)
+    if verify_client(tokens)
+      @product = Item.find(id_params)
+    else
+      need_ids_error
+    end
   end
 
   private

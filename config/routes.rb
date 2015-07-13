@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get 'lookup/categories', to: '/api/lookup#categories', as: 'categories'
     get 'lookup/retailersinarea', to: '/api/lookup#retailers_in_area', as: 'area_reatailers'
     get 'products/byname', to: '/api/products#products_by_name', as: 'products_by_name'
-    get 'products/:id', to: '/api/products#product_by_id', as: 'product_by_id'
+    get 'products/byid', to: '/api/products#product_by_id', as: 'product_by_id'
   end
 
   devise_for :users

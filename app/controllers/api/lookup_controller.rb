@@ -5,7 +5,7 @@ class Api::LookupController < ApiController
       @all_categories = Category.all
       render json: @all_categories
     else
-      error
+      need_ids_error
     end
   end
 
@@ -14,7 +14,7 @@ class Api::LookupController < ApiController
       @all_retailers = Retailer.all
       render json: @all_retailers
     else
-      error
+      need_ids_error
     end
   end
 
@@ -33,9 +33,5 @@ class Api::LookupController < ApiController
 
   def tokens
     params.permit(:client_id, :secret_id)
-  end
-
-  def error
-    render json: { error: "Client id and  Secret id needed" }
   end
 end
