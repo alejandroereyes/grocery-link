@@ -2,11 +2,11 @@ class Api::ProductsController < ApiController
 
   def products_by_name
     # need 404 rescue, need verify tokens
-    @products = Item.where("name LIKE ?", "%#{name_params[1]}%")
+    @products = Item.get_full_item_info(params[:name])
     if @products.first
-      render json: @products
+      @products
     else
-      render json: { message: "No Products Found" , params: name_params}, status: 404
+      not_found(params)
     end
   end
 
