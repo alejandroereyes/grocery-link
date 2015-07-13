@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class Api::LookupControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
   setup do
     @user = User.create(email: Faker::Internet.email, password: 'password', admin: true, name: Faker::Name.name)
     @client_id = @user.client_id
