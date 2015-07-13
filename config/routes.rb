@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  # authenticate :employee do
+
 
     resources :items
     post 'items/import', to: 'items#import', as: 'import_item'
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :retailers
     resources :stores
     get '/admin/dashboard', to: 'admin#dashboard', as: 'dashboard'
-  # end
+
 
   get 'api/docs', to: 'api/welcome#docs', as: "docs"
   root to: 'api/welcome#home'

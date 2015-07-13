@@ -22,11 +22,11 @@
 <% high_list, low_list = find_price_variances_for(current_retailer) %>
   <div class='col-md-4 col-md-offset-2'>
     <h3>Top 5 Highest Priced item compared to other retailers</h3>
-    <%= high_list.inspect %>
+    <% high_list.each do |item| %><%= item.name %><br><% end %>
   </div>
   <div class='col-md-4 col-md-offset-1'>
   <h3>Top 5 Lowest Priced item compared to other retailers</h3>
-    <%= low_list.inspect %>
+    <% low_list.each do |item| %><%= item.name %><br><% end %>
   </div>
 </div>
 

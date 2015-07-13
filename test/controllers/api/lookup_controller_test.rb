@@ -8,7 +8,7 @@ class Api::LookupControllerTest < ActionController::TestCase
     @secret_id = @user.secret_id
     @request.env["devise.mapping"] = Devise.mappings[:user]
     @request.env["HTTP_REFERER"]   = 'http://localhost:3000/'
-    @controller.stubs(:verify_client).returns(true)
+    @controller.stubs(:verify_client).returns(false)
   end
 
   test "should get categories" do
