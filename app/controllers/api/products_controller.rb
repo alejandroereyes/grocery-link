@@ -5,14 +5,12 @@ class Api::ProductsController < ApiController
     if @products.first
       render json: @products
     else
-      render json: { message: "No Products Found" , params: name_params}
+      render json: { message: "No Products Found" , params: name_params}, status: 404
     end
   end
 
   def product_by_id
-    @product = Item.find(id_params)
-    # @product = @product.retailers
-    # render json: @product
+    @product = Item.find(id_params) #rescue with not_found(params)
   end
 
   private

@@ -120,6 +120,10 @@ GEM
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.18.2)
+    pg_search (1.0.4)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -239,6 +243,7 @@ DEPENDENCIES
   mandrill_dm
   mocha (~> 1.1)
   pg
+  pg_search
   pry
   puma
   rails (= 4.2.3)

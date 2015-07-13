@@ -6,6 +6,10 @@ class ApiController < ApplicationController
   end
 
   def error
-    render json: { error: "Client id and  Secret id needed" }
+    render json: { error: "Client id and  Secret id needed" }, status: 407
+  end
+
+  def not_found(params)
+    render json: { message: "Sorry, We could not find this record", received: params }, status: 404
   end
 end

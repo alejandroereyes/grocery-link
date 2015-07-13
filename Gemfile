@@ -56,4 +56,5 @@ gem 'information_machine_api', github: 'information-machine/information-machine-
 gem "will_paginate", "~> 3.0"
 gem "will_paginate-bootstrap", "~> 1.0"
 gem "mocha", "~> 1.1"
+gem 'pg_search'
 
