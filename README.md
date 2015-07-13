@@ -4,4 +4,6 @@
   A web api for grocery retailers to upload their data product data.
 
 ## Method calls
-  *To request products that match by name. Returns each product and retailers that carry the item. `/api/products/byname?client_id=CLIENT_ID&secret_id=SECRECT_ID&name=PRODUCT_NAME`
+  * To request by id. Returns all retailer's that carry the item and price for each retailer. `/api/products/byid?client_id=CLIENT_ID&secret_id=SECRECT_ID&id=PRODUCT_ID`
+
+  * To request products that match by name. Returns each product's info and retailers that carry the item. `/api/products/byname?client_id=CLIENT_ID&secret_id=SECRECT_ID&name=PRODUCT_NAME`

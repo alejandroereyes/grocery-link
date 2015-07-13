@@ -1,12 +1,13 @@
 class ApiController < ApplicationController
 
-   def verify_client(tokens)
-    is_a_client = User.exists?(client_id: tokens['client_id'], secret_id: tokens['secret_id'])
-    is_a_client
-  end
-
-  def need_ids_error
-    render json: { error: "Client id and  Secret id needed" }, status: 407
+   def verify_client
+    client_id = request.params['client_id']
+    secret_id = request.params['secret_id']
+    user = User.where(client_id: client_id, secret_id: secret_id).first if client_id && secret_id
+    unless user
+      render json: { error: "Client id and Secret id needed" }, status: 401
+    return false
+    end
   end
 
   def not_found(params)

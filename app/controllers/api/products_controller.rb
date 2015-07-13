@@ -1,7 +1,7 @@
 class Api::ProductsController < ApiController
+  before_filter :verify_client
 
   def products_by_name
-    # need 404 rescue, need verify tokens
     @products = Item.get_full_item_info(params[:name])
     if @products.first
       @products
@@ -11,18 +11,14 @@ class Api::ProductsController < ApiController
   end
 
   def product_by_id
-    if verify_client(tokens)
+    begin
       @product = Item.find(id_params)
-    else
-      need_ids_error
+    rescue ActiveRecord::RecordNotFound => error
+      not_found(params)
     end
   end
 
   private
-  def tokens
-    params.permit(:client_id, :secret_id)
-  end
-
   def name_params
     params.permit(:name).first
   end
