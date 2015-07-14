@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
     resources :items
-    post 'items/import', to: 'items#import', as: 'import_item'
+    post 'items/csv_new', to: 'items#import', as: 'import_item'
     resources :users
     resources :retailers
     resources :stores
