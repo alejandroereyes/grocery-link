@@ -28,12 +28,8 @@
     <%= f.text_field :manufacturer %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+    <%= f.select :category_id, all_categories %>
   </div>
   <div class="field">
     <%= f.label :ingredients %><br>
