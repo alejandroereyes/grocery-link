@@ -10,56 +10,93 @@
       </ul>
     </div>
   <% end %>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-4'>
+        <div class="field">
+          <%= f.label :brand %><br>
+          <%= f.text_field :brand %>
+        </div>
+      </div>
+      <div class='col-md-4'>
+        <div class="field">
+          <%= f.label :name %><br>
+          <%= f.text_field :name %>
+        </div>
+      </div>
+      <div class='col-md-4'>
+        <div class="field">
+          <%= f.label :price %><br>
+          <%= f.text_field :price %>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :brand %><br>
-    <%= f.text_field :brand %>
+    <div class='row'>
+      <div class='col-md-4'>
+        <div class="field">
+          <%= f.label :manufacturer %><br>
+          <%= f.text_field :manufacturer %>
+        </div>
+      </div>
+      <div class='col-md-4'>
+        <div class="field">
+          <%= f.label :category_id %><br>
+          <%= f.select :category_id, all_categories %>
+        </div>
+      </div>
+      <div class='col-md-4'>
+        <div class="field">
+          <%= f.label :upc %><br>
+          <%= f.text_field :upc %>
+        </div>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-4'>
+        <div class="field">
+          <%= f.label :servings_unit %><br>
+          <%= f.text_field :servings_unit %>
+        </div>
+      </div>
+      <div class='col-md-4'>
+        <div class="field">
+          <%= f.label :tags %><br>
+          <%= f.text_field :tags %>
+        </div>
+      </div>
+      <div class='col-md-4'>
+        <div class="field">
+          <%= f.label :total_servings %><br>
+          <%= f.text_field :total_servings %>
+        </div>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-4'>
+        <div class="field">
+          <%= f.label :description %><br>
+          <%= f.text_area :description %>
+        </div>
+      </div>
+      <div class='col-md-4'>
+        <div class="field">
+          <%= f.label :weight %><br>
+          <%= f.text_field :weight %>
+        </div>
+      </div>
+      <div class='col-md-4'>
+        <div class="field">
+          <%= f.label :ingredients %><br>
+          <%= f.text_area :ingredients %>
+        </div>
+      </div>
+    </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :manufacturer %><br>
-    <%= f.text_field :manufacturer %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.select :category_id, all_categories %>
-  </div>
-  <div class="field">
-    <%= f.label :ingredients %><br>
-    <%= f.text_area :ingredients %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :tags %><br>
-    <%= f.text_field :tags %>
-  </div>
-  <div class="field">
-    <%= f.label :total_servings %><br>
-    <%= f.text_field :total_servings %>
-  </div>
-  <div class="field">
-    <%= f.label :servings_unit %><br>
-    <%= f.text_field :servings_unit %>
-  </div>
-  <div class="field">
-    <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
-  </div>
-  <div class="field">
-    <%= f.label :upc %><br>
-    <%= f.text_field :upc %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
