@@ -4,7 +4,7 @@
 var GetLowItems = React.createClass({
   render: function () {
     return (
-      <ItemReport source='/admin/low_list' />
+      <ItemReport source='/admin/low_list' box={this.props.box} />
     )
   }
 });
@@ -12,7 +12,7 @@ var GetLowItems = React.createClass({
 var GetHighItems = React.createClass({
   render: function () {
     return (
-      <ItemReport source='/admin/high_list' />
+      <ItemReport source='/admin/high_list' box={this.props.box} />
     )
   }
 });
@@ -21,7 +21,8 @@ var ItemReport = React.createClass({
 
   getInitialState: function () {
     return {
-      list: this.props.list
+      list: this.props.list,
+      box: this.props.box
     }
   },
 
@@ -39,8 +40,7 @@ var ItemReport = React.createClass({
   render: function () {
     return (
       <div className=''>
-        <p>this is react</p>
-        <ShowList className='report' item={this.state.list} />
+        <ShowList className={this.state.box} item={this.state.list} />
       </div>
     )
   }
@@ -48,9 +48,14 @@ var ItemReport = React.createClass({
 
 var ShowList = React.createClass({
   render: function () {
-    return (
-      <p>{this.props.item}</p>
-    )
+    var list = this.props.item;
+    if (list) {
+      var items = list.map(function (item) { return (<li>{item.name}</li>); });
+      return (<div>{items}</div>);
+    } else {
+      return (<div/>);
+    }
+
   }
 });
 
