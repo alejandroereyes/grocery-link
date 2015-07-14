@@ -27,4 +27,14 @@ class AdminControllerTest < ActionController::TestCase
     get :dashboard
     assert_response :success
   end
+
+  test "should get high list" do
+    get :high_list
+    assert_response :success
+  end
+
+  test "should get low list" do
+    get :low_list
+    assert_response :success
+  end
 end
