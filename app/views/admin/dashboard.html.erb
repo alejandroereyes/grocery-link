@@ -19,15 +19,13 @@
   </div>
 </div>
 <div class='row'>
-<% high_list = high_priced_items_for(current_retailer) %>
-<% low_list = low_priced_items_for(current_retailer) %>
   <div class='col-md-4 col-md-offset-2'>
     <h3>Top 5 Highest Priced item compared to other retailers</h3>
-    <% high_list.each do |item| %><%= item.name %><br><% end %>
+    <%= react_component("HighItemReport", { high_list: high_priced_items_for(current_retailer) }) %>
   </div>
   <div class='col-md-4 col-md-offset-1'>
   <h3>Top 5 Lowest Priced item compared to other retailers</h3>
-    <% low_list.each do |item| %><%= item.name %><br><% end %>
+      <%= react_component("LowItemReport", { low_list: low_priced_items_for(current_retailer) }) %>
   </div>
 </div>
 
