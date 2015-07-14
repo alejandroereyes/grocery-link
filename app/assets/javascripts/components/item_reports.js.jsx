@@ -4,7 +4,7 @@
 var GetLowItems = React.createClass({
   render: function () {
     return (
-      <ItemReport source='/admin/low_list' box='report-goes-here' />
+      <ItemReport source='/admin/low_list' box={this.props.box} />
     )
   }
 });
