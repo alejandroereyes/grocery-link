@@ -4,7 +4,7 @@
 var GetLowItems = React.createClass({
   render: function () {
     return (
-      <ItemReport source='/admin/low_list' />
+      <ItemReport source='/admin/low_list' box='report-goes-here' />
     )
   }
 });
@@ -12,7 +12,7 @@ var GetLowItems = React.createClass({
 var GetHighItems = React.createClass({
   render: function () {
     return (
-      <ItemReport source='/admin/high_list' />
+      <ItemReport source='/admin/high_list' box='report' />
     )
   }
 });
@@ -21,7 +21,8 @@ var ItemReport = React.createClass({
 
   getInitialState: function () {
     return {
-      list: this.props.list
+      list: this.props.list,
+      box: this.props.box
     }
   },
 
@@ -40,7 +41,7 @@ var ItemReport = React.createClass({
     return (
       <div className=''>
         <p>this is react</p>
-        <ShowList className='report' item={this.state.list} />
+        <ShowList className={this.state.box} item={this.state.list} />
       </div>
     )
   }
