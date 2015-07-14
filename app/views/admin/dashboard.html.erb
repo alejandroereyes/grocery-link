@@ -21,11 +21,16 @@
 <div class='row'>
   <div class='col-md-4 col-md-offset-2'>
     <h3>Top 5 Highest Priced item compared to other retailers</h3>
-    <%= react_component("HighItemReport", { high_list: high_priced_items_for(current_retailer) }) %>
+    <%= react_component("GetHighItems") %>
   </div>
   <div class='col-md-4 col-md-offset-1'>
   <h3>Top 5 Lowest Priced item compared to other retailers</h3>
-      <%= react_component("LowItemReport", { low_list: low_priced_items_for(current_retailer) }) %>
+      <%= react_component("GetLowItems") %>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
+    <%= 'show reports here' %>
   </div>
 </div>
 

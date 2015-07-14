@@ -1,0 +1,4 @@
+/* globals React */
+'use strict';
+
+
