@@ -31,13 +31,13 @@ ActiveRecord::Schema.define(version: 20150711195431) do
     t.integer  "category_id"
     t.text     "ingredients"
     t.text     "description"
-    t.string   "tags"
+    t.string   "tags",           default: [],              array: true
     t.integer  "total_servings"
     t.string   "servings_unit"
     t.string   "weight"
     t.string   "upc"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "price"
   end
 
