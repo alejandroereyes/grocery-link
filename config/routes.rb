@@ -9,17 +9,18 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+  resources :users
 
+  resources :items
+  post 'items/csv_new', to: 'items#csv_new_items', as: 'csv_new_items'
 
+  resources :retailers
 
-    resources :items
-    post 'items/import', to: 'items#import', as: 'import_item'
-    resources :users
-    resources :retailers
-    resources :stores
-    get '/admin/dashboard', to: 'admin#dashboard', as: 'dashboard'
-    get '/admin/high_list', to: 'admin#high_list', as: 'high_list'
-    get '/admin/low_list', to: 'admin#low_list', as: 'low_list'
+  resources :stores
+
+  get '/admin/dashboard', to: 'admin#dashboard', as: 'dashboard'
+  get '/admin/high_list', to: 'admin#high_list', as: 'high_list'
+  get '/admin/low_list', to: 'admin#low_list', as: 'low_list'
 
   get 'api/docs', to: 'api/welcome#docs', as: "docs"
   root to: 'api/welcome#home'

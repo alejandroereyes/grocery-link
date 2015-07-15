@@ -18,11 +18,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def import
-    Item.import(params[:file])
-    redirect_to :back, notice: "File imported."
-  end
-
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -31,6 +26,23 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def csv_new_items
+    CSV.foreach(params['file'].path, headers: true) do |row|
+      if row['name'] && row['price']
+        @item = Item.new
+        @item.name = row['name']; @item.brand = row['brand']
+        @item.ingredients = row['ingredients']; @item.description = row['description']
+        @item.tags = row['tags']; @item.total_servings = row['total_servings']
+        @item.servings_unit = row['servings_unit']; @item.weight = row['weight']
+        @item.upc = row['upc']; @item.price = row['price']; @item.manufacturer = row['manufacturer']
+        @item.save
+        @category = row['category'].titleize
+        ItemHelp.help_csv_save(current_retailer_id, @item, {'price'=> @item.price}, @category)
+      end
+    end
+    redirect_to :dashboard, notice: "File upload Succesful"
   end
 
   def update

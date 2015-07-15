@@ -2,9 +2,9 @@
 
 <%= render 'form' %>
 
-<%= form_tag import_item_path, multipart: true do %>
+<%= form_tag csv_new_items_path, multipart: true do %>
   <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
+  <%= submit_tag "Import New Items" %>
 <% end %>
 
 <%= link_to 'Back', items_path %>
