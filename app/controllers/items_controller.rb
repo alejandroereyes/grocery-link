@@ -32,11 +32,10 @@ class ItemsController < ApplicationController
     CSV.foreach(params['file'].path, headers: true) do |row|
       if row['name'] && row['price']
         @item = Item.new
-        @item.name = row['name']; @item.brand = row['brand']
-        @item.ingredients = row['ingredients']; @item.description = row['description']
-        @item.tags = row['tags']; @item.total_servings = row['total_servings']
-        @item.servings_unit = row['servings_unit']; @item.weight = row['weight']
-        @item.upc = row['upc']; @item.price = row['price']; @item.manufacturer = row['manufacturer']
+        ['name', 'brand', 'ingredients', 'description', 'tags', 'total_servings',
+         'servings_unit', 'weight', 'upc', 'price', 'manufacturer'].each do |key|
+          @item[key.to_sym] = row[key]
+         end
         @item.save
         @category = row['category'].titleize
         ItemHelp.help_csv_save(current_retailer_id, @item, {'price'=> @item.price}, @category)
