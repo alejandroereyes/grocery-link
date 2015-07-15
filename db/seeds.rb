@@ -15,15 +15,16 @@ all_categories['result'].each do |cat|
 end
 
 state = 'TX'
-cities = ['Austin', 'Round Rock', 'Katy', 'Dallas', 'San Marcos', 'San Antonio', 'Houston', 'Waco', 'Addison', 'Bastrop', 'Cedar Park', 'Bee Cave', 'West Lake', 'Paris']
+cities = ['Austin', 'Round Rock', 'Katy', 'Dallas', 'San Marcos', 'San Antonio',
+          'Houston','Waco', 'Addison','Bastrop', 'Cedar Park', 'Bee Cave', 'Paris']
 
 bool = [true, false]
 
-names = ["Amy's", 'evol', 'totinos', 'organic valley', 'ice cream', 'tuna', 'beef', 'chicken', 'jam', 'bread', 'milk', 'peanut butter', 'mustard', 'ketchup', 'pancake',
-         'potato', 'squash', 'pasta', 'sauce', 'kombucha', 'coffee', 'seasoning', 'tender', 'tortilla', 'hummus', 'olive', 'oil', 'shrimp', 'crab', 'oyster', 'smoked', 'waffle',
-         'bagel', 'danish', 'doughnut', 'chocolate', 'candy', 'gum', 'cola', 'root beer', 'cherry cola', 'diet cola', 'gerber', 'taco', 'pad thai', 'chili', 'soup', 'stew',
-         'hot dog', 'sausage', 'flour', 'sugar', 'spicy', 'mild', 'medium', 'orange', 'strawberry', 'apple', 'lime', 'lemon', 'pineapple', 'mango', 'guava', 'banana', 'coconut',
-         'grape', 'corn', 'bean', 'queso', 'cheese', 'goat', 'asiago', 'wine', 'cake', 'tart', 'ale', 'egg', 'sour cream', 'yogurt', 'ghee', 'tomato', 'gravy']
+names = ["Amy's", 'evol', 'totinos', 'organic valley', 'ice cream', 'tuna', 'beef', 'chicken', 'bread', 'gravy',
+         'pasta', 'sauce', 'kombucha', 'coffee', 'tortilla', 'hummus', 'shrimp', 'crab', 'oyster', 'milk',
+         'bagel', 'danish', 'chocolate', 'candy', 'gum', 'cola', 'root beer', 'gerber', 'taco', 'pad thai',
+         'sausage', 'spicy', 'mild', 'medium', 'orange', 'strawberry', 'apple', 'chili', 'soup',
+         'grape', 'corn', 'goat', 'asiago', 'wine', 'cake', 'ale', 'egg', 'yogurt', 'ghee', 'tomato']
 
 ['Whole Foods Market', 'HEB', 'Randalls', 'Trader Joe', 'Sprouts', 'Natural Grocer', 'Target', 'Walmart'].each do |company|
   store_count = 1000
@@ -59,6 +60,6 @@ end
 Item.all.each do |item|
   Retailer.all.each do |retailer|
 
-    RetailerItemPrice.create(retailer_id: retailer.id, item_id: item.id, price: Faker::Commerce.price)
+    RetailerItemPrice.create(retailer_id: retailer.id, item_id: item.id, price: Faker::Commerce.price, product_id: Faker::Number.number(6))
   end
 end

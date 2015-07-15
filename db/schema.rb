@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150711195431) do
   end
 
   create_table "items", force: :cascade do |t|
+    t.integer  "product_id"
     t.string   "brand"
     t.string   "name"
     t.string   "manufacturer"
