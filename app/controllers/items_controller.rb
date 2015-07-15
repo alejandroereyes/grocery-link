@@ -32,13 +32,13 @@ class ItemsController < ApplicationController
     CSV.foreach(params['file'].path, headers: true) do |row|
       if row['name'] && row['price']
         @item = Item.new
-        ['name', 'brand', 'ingredients', 'description', 'tags', 'total_servings',
-         'servings_unit', 'weight', 'upc', 'price', 'manufacturer'].each do |key|
+        ['name', 'brand', 'ingredients', 'description', 'total_servings',
+         'tags', 'servings_unit', 'weight', 'upc', 'manufacturer'].each do |key|
           @item[key.to_sym] = row[key]
          end
         @item.save
         @category = row['category'].titleize
-        ItemHelp.help_csv_save(current_retailer_id, @item, {'price'=> @item.price}, @category)
+        ItemHelp.help_csv_save(current_retailer_id, @item, {'price'=> row['price'], 'product_id'=> row['product_id']}, @category)
       end
     end
     redirect_to :dashboard, notice: "File upload Succesful"
@@ -66,6 +66,6 @@ class ItemsController < ApplicationController
     end
 
     def price_params
-      params.require(:item).permit(:price)
+      params.require(:item).permit(:price, :product_id,)
     end
 end

@@ -2,12 +2,11 @@ class RetailerItemPrice < ActiveRecord::Base
   belongs_to :retailer
   belongs_to :item
 
-  def self.add_or_update(params, item, retailer_id, *product_id)
-    # p_id = product_id ? product_id : params['product_id']
+  def self.add_or_update(params, item, retailer_id)
     RetailerItemPrice.find_or_create_by(price: params['price'],
                                   retailer_id: retailer_id,
-                                      item_id: item.id)
-                                   # product_id: p_id)
+                                      item_id: item.id,
+                                   product_id: params['product_id'])
   end
 
   def self.lowest_price_for(item)
