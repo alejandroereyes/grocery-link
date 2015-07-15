@@ -5,10 +5,12 @@ class ItemsControllerTest < ActionController::TestCase
     retailer  = Retailer.create(name: Faker::Company.name)
     @user = User.create(email: Faker::Internet.email, password: 'password', admin: true, name: Faker::Name.name)
     link = RetailerUser.create(retailer_id: retailer.id, user_id: @user.id)
-    category = Category.create(name: ['fish', 'beef', 'frozen'].sample)
+    Category.create(name: 'Sauces, Gravies & Marinades')
+    category = Category.create(name: 'Candy')
     @item = Item.create(brand: Faker::App.name, name: Faker::Commerce.product_name, manufacturer: Faker::Company.name, ingredients: Faker::Lorem.sentence,
                         description: Faker::Lorem.sentence, category: category.name, category_id: category.id, upc: Faker::Number.number(8), tags: Faker::Lorem.words(3),
                         total_servings: Faker::Number.number(1), servings_unit: ['g', 'lb', 'oz'].sample, weight: Faker::Number.number(1), price: Faker::Commerce.price)
+    @file = fixture_file_upload('/test_files/my_cool_csv.csv', 'text/csv')
     @request.env["devise.mapping"] = Devise.mappings[:user]
     @request.env["HTTP_REFERER"]   = 'http://localhost:3000/'
     @controller.stubs(:current_user).returns(@user)
@@ -35,6 +37,11 @@ class ItemsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to item_path(assigns(:item))
+  end
+
+  test "can upload a csv file" do
+    post :csv_new_items, :file => @file
+    assert_response :redirect
   end
 
   test "should show item" do
