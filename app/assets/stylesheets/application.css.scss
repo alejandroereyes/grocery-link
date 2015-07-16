@@ -4,10 +4,7 @@
 //You need to now manually import every other scss file.
 @import 'admin';
 
-
-
-
-
+$body-color: #A0CA92;
 
 a {
   text-decoration: none;
@@ -15,3 +12,12 @@ a {
     text-decoration: none;
   }
 }
+
+.yield {
+  margin-top: 25px;
+}
+
+body {
+  background-color: lighten($body-color, 10%);
+}
+
