@@ -24,7 +24,7 @@
         <td><%= item.name %></td>
         <td><%= item.manufacturer %></td>
         <td><%= item.category %></td>
-        <td><%= item.tags.gsub('[','').gsub(']', '').gsub(/["]/, '') %></td>
+        <td><%= item.tags.join(', ') %></td>
         <td><%= item.total_servings %></td>
         <td><%= item.servings_unit %></td>
         <td><%= item.weight %></td>

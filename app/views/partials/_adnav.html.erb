@@ -1,16 +1,18 @@
 
-<li role="presentation" class=<%= active_if(dashboard_path) %>>
-    <%= link_to 'Dashboard', dashboard_path %>
-</li>
-<li role="presentation" class=<%= active_if(new_store_path) %>>
-    <%= link_to "Add a Store", new_store_path %>
-</li>
-<li role="presentation" class=<%= active_if(stores_path) %>>
-    <%= link_to "All Stores", stores_path %>
-</li>
-<li role="presentation" class=<%= active_if(items_path) %>>
-    <%= link_to "All Items", items_path %>
-</li>
-<li role="presentation" class=<%= active_if(new_item_path) %>>
-    <%= link_to "Add Item", new_item_path %>
-</li>
+<ul>
+  <li class=<%= active_if(dashboard_path) %>>
+      <%= link_to 'Dashboard', dashboard_path %>
+  </li>
+  <li class=<%= active_if(new_store_path) %>>
+      <%= link_to "Add a Store", new_store_path %>
+  </li>
+  <li class=<%= active_if(stores_path) %>>
+      <%= link_to "All Stores", stores_path %>
+  </li>
+  <li class=<%= active_if(items_path) %>>
+      <%= link_to "All Items", items_path %>
+  </li>
+  <li class=<%= active_if(new_item_path) %>>
+      <%= link_to "Add Item", new_item_path %>
+  </li>
+</ul>
