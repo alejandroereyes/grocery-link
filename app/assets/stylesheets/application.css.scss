@@ -44,4 +44,32 @@ select {
   border-color: #9E9E9E;
 }
 
+.actions {
+
+  input {
+    background-color: $bone-white;
+    border: 1px solid #9E9E9E;
+    border-radius: 5px;
+    transition-duration: 2s;
+
+    &:hover{
+      border-radius: 0;
+    }
+  }
+}
+
+
+
+.submit {
+  background-color: $bone-white;
+  border: 1px solid #9E9E9E;
+  border-radius: 5px;
+  transition-duration: 2s;
+
+  &:hover {
+    border-radius: 0;
+  }
+}
+
+
 
