@@ -27,18 +27,21 @@ body {
   background-color: $bone-white;
 }
 
+.pagination {
 
+  .active {
 
-  .pagination {
+    span {
+      border-color: $primary-color;
+      background-color: $primary-color;
 
-    .active {
-
-      span {
-        border-color: $primary-color;
-        background-color: $primary-color;
-
-      }
     }
   }
+}
+
+select {
+  background-color: $bone-white;
+  border-color: #9E9E9E;
+}
 
 
