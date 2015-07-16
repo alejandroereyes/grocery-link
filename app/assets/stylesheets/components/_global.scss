@@ -151,9 +151,9 @@ video.responsive-video {
 
     a { color: #444; }
 
-    &.active a { color: #fff; }
+    &.active a { background-color: $primary-color; }
 
-    &.active { background-color: $primary-color; }
+    &.active {  }
 
     &.disabled a {
       cursor: default;

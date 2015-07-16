@@ -27,3 +27,18 @@ body {
   background-color: $bone-white;
 }
 
+
+
+  .pagination {
+
+    .active {
+
+      span {
+        border-color: $primary-color;
+        background-color: $primary-color;
+
+      }
+    }
+  }
+
+
