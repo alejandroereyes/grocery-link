@@ -1,0 +1,16 @@
+languages:
+  Ruby: true
+  JavaScript: true
+  PHP: true
+  Python: true
+exclude_paths:
+- "app/assets/javascripts/animation.js"
+- "app/assets/javascripts/dropdown.js"
+- "app/assets/javascripts/forms.js"
+- "app/assets/javascripts/global.js"
+- "app/assets/javascripts/jquery.easing.1.3.js"
+- "app/assets/javascripts/jquery.hammer.js"
+- "app/assets/javascripts/leanModal.js"
+- "app/assets/javascripts/materialbox.js"
+- "app/assets/javascripts/parallax.js"
+- "app/assets/javascripts/pushpin.js"
