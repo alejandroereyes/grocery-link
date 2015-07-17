@@ -10,12 +10,10 @@ class Retailer < ActiveRecord::Base
     retailer_item_prices.where(item_id: item.id).first
   end
 
-  def retailers_organic_counts
-    arr = []
-    Retailer.all.map do |retailer|
-      { id: retailer.id, org_count: retailer.first.organics.count }
+  def self.all_organic_counts
+    all.map do |retailer|
+      { id: retailer.id, org_count: retailer.organics.count }
     end
-    arr
   end
 
   def organics

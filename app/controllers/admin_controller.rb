@@ -6,6 +6,7 @@ class AdminController < ApplicationController
     @item_count = current_retailer.first.items.count
     @organics_count = current_retailer.first.organics.count
     @organics_mix = (@organics_count.to_f/@item_count.to_f).round(2)
+    @all_org_counts = Retailer.all_organic_counts
   end
 
   def high_list

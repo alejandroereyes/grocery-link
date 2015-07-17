@@ -15,11 +15,17 @@ $bone-white: #F8FAF5;
 
 .sign-in-btn {
   background-color: $primary-color;
-  border: 1px solid white;
+  border: 2px solid $secondary-color;
   border-radius: 10px;
   width: 150px;
   height: 50px;
   margin: 0 10px;
+  transition-duration: 2s;
+  font-size: 18px;
+
+  &:hover {
+    border-radius: 0;
+  }
 }
 
 a {
@@ -87,6 +93,18 @@ input {
 
   &:hover {
     border-radius: 0;
+  }
+}
+
+.btn.btn-default {
+  color: $primary-color;
+}
+
+nav ul a {
+  color: lighten(#9E9E9E, 15%);
+
+  span {
+    color: $secondary-color;
   }
 }
 
