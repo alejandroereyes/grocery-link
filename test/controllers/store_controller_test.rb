@@ -1,7 +1,7 @@
 require 'test_helper'
 
 # class StoreControllerTest < ActionController::TestCase
-
+#
 #   setup do
 #     state = 'TX'
 #     cities = ['Austin', 'Round Rock', 'Katy', 'Dallas', 'San Marcos', 'San Antonio', 'Houston', 'Waco', 'Addison', 'Bastrop', 'Cedar Park', 'Bee Cave', 'West Lake', 'Paris']
