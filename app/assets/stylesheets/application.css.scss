@@ -9,8 +9,17 @@ $bone-white: #F8FAF5;
 
 .home-logo {
   font-family: bellota;
-  font-size: 2.5em;
+  font-size: 3em;
+  margin: 0 10px;
+}
 
+.sign-in-btn {
+  background-color: $primary-color;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 150px;
+  height: 50px;
+  margin: 0 10px;
 }
 
 a {
