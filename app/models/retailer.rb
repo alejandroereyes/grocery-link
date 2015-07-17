@@ -10,6 +10,10 @@ class Retailer < ActiveRecord::Base
     retailer_item_prices.where(item_id: item.id).first
   end
 
+  def on_sale?(item)
+    retailer_item_prices.where(item_id: item.id).first.on_sale
+  end
+
   def self.all_organic_counts
     all.map do |retailer|
       { id: retailer.id, org_count: retailer.organics.count }

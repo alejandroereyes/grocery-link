@@ -33,7 +33,6 @@ group :development, :test do
   gem 'spring'
 end
 
-
 gem 'puma'
 gem 'figaro'
 group :production do
@@ -44,7 +43,7 @@ group :development, :test do
   gem 'pry'
   gem 'faker'
 end
-gem "codeclimate-test-reporter", group: :test, require: nil
+gem "codeclimate-test-reporter", {:group=>:test, :require=>nil}
 gem 'bullet', group: :development
 gem 'bootstrap-sass'
 gem 'react-rails'
