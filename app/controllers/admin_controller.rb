@@ -4,7 +4,7 @@ class AdminController < ApplicationController
   def dashboard
     @store_count = current_stores.count
     @item_count = current_retailer.first.items.count
-    @organics_count = organics_for_retailer.count
+    @organics_count = current_retailer.first.organics.count
     @organics_mix = (@organics_count.to_f/@item_count.to_f).round(2)
   end
 
