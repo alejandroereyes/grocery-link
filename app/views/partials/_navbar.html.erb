@@ -3,8 +3,8 @@
     <div class='nav-wrapper'>
       <ul><li><%= link_to 'groceryLink', root_path, class: 'home-logo' %></li></ul>
       <a href="#" data-activates="mobile-demo" class="right button-collapse"><i class="material-icons">menu</i></a>
-      <ul class='hide-on-med-and-down'><li class=<%= active_if(docs_path) %>><%= link_to 'Docs', docs_path %></li></ul>
-
+      <ul class='hide-on-med-and-down'><li class=<%= active_if(docs_path) %>><%= link_to 'Docs', docs_path %></li>
+      </ul>
       <ul class='side-nav' id='mobile-demo'><li class=<%= active_if(docs_path) %>><%= link_to 'Docs', docs_path %></li>
       <% if user_is_admin? %>
         <li><%= link_to 'Dashboard', dashboard_path %></li>
@@ -28,7 +28,7 @@
           <% else %>
           <li class=<%= active_if(new_user_session_path) %>><a href="/users/sign_in">Log In</a></li>
           <% end %>
-          <li class=<%= active_if(new_user_registration_path)%>><%= button_to "Sign Up", new_user_registration_path, class: "sign-in-btn" %></li>
+          <li class=<%= active_if(new_user_registration_path)%>><%= button_to "Sign Up", new_user_registration_path, class: "sign-in-btn", method: :get %></li>
         </ul>
     </div>
   </nav>

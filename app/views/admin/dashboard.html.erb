@@ -14,17 +14,38 @@
   <div class='col-md-2 col-md-offset-1'>
     <div class="panel panel-default">
       <div class="panel-heading">Organics Count</div>
-      <div class="panel-body"><%= organics_for(current_retailer).count %></div>
+      <div class="panel-body"><%= @organics_count %></div>
     </div>
   </div>
 </div>
 <div class='row'>
+  <div class='col-md-2 col-md-offset-2'>
+    <div class="panel panel-default">
+      <div class="panel-heading">Organics Mix</div>
+      <div class="panel-body"><%= @organics_mix %></div>
+    </div>
+  </div>
+  <div class='col-md-2 col-md-offset-1'>
+    <div class="panel panel-default">
+      <div class="panel-heading">something</div>
+      <div class="panel-body"><%=  %></div>
+    </div>
+  </div>
+  <div class='col-md-2 col-md-offset-1'>
+    <div class="panel panel-default">
+      <div class="panel-heading">here too</div>
+      <div class="panel-body"><%=  %></div>
+    </div>
+  </div>
+</div>
+
+<div class='row'>
   <div class='col-md-4 col-md-offset-2'>
-    <h3>Top 5 Highest Priced item compared to other retailers</h3>
+    <h4>Top 5 Highest Priced item compared to other retailers</h4>
     <%= react_component("HighReportButton") %>
   </div>
   <div class='col-md-4 col-md-offset-1'>
-  <h3>Top 5 Lowest Priced item compared to other retailers</h3>
+  <h4>Top 5 Lowest Priced item compared to other retailers</h4>
     <%= react_component('LowReportButton') %>
   </div>
 </div>

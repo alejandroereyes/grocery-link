@@ -26,6 +26,12 @@ class ApplicationController < ActionController::Base
     @current_stores = current_retailer.first.stores
   end
 
+  def organics_for_retailer
+    current_retailer.first.items.select do |item| item.tags.include?('organic') ||
+                                                  item.tags.include?("Organic")
+    end
+  end
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
