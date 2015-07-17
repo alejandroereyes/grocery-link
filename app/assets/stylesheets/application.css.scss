@@ -60,6 +60,16 @@ select {
   }
 }
 
+.file-csv-name {
+  margin-bottom: 5px;
+}
+
+input {
+  .upload {
+    font-size: 50px;
+  }
+}
+
 .submit {
   background-color: $bone-white;
   border: 1px solid #9E9E9E;
