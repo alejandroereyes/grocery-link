@@ -5,6 +5,16 @@ GIT
     information_machine_api (1.0)
       unirest (~> 1.1.2)
 
+GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: a2fafcb2c78d817c5ad849d834ed259a1b43c269
+  specs:
+    jquery-datatables-rails (3.3.0)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -241,6 +251,7 @@ DEPENDENCIES
   figaro
   information_machine_api!
   jbuilder (~> 2.0)
+  jquery-datatables-rails!
   jquery-rails
   mandrill_dm
   materialize-sass

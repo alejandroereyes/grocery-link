@@ -1,5 +1,5 @@
 <h2>Stores</h2>
-<table class="table table-hover">
+<table class="table table-hover display" id='table_for_data'>
  <thead>
     <tr>
       <th>Store ID</th>
@@ -14,7 +14,7 @@
   <tbody>
     <% @stores.each do |store| %>
       <tr>
-        <td><%= link_to "#{store.store_id}", store_path(store.id) %></td>
+        <td><a href=<%= "/stores/#{store.id}" %>><%= store.id %></a></td>
         <td><%= store.street.titleize %></td>
         <td><%= store.city.titleize %></td>
         <td><%= store.state %></td>

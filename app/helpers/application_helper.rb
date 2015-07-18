@@ -5,6 +5,6 @@ module ApplicationHelper
   end
 
   def active_if(path)
-    toggle_class_to('active', path)
+    toggle_class_to('on-page', path)
   end
 end

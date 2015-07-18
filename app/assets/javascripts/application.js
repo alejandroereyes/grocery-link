@@ -14,6 +14,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
 //= require turbolinks
 //= require react
 //= require react_ujs
@@ -26,4 +27,5 @@ $( document ).ready(function(){
   $(".collap").collapsible({
       accordion : false
   });
+  $('#table_for_data').dataTable();
 });

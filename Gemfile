@@ -57,4 +57,5 @@ gem "will_paginate-bootstrap", "~> 1.0"
 gem "mocha", "~> 1.1"
 gem 'pg_search'
 gem 'materialize-sass'
+gem "jquery-datatables-rails", github: 'rweng/jquery-datatables-rails'
 
