@@ -10,10 +10,16 @@ class RetailerTest < ActiveSupport::TestCase
                         description: Faker::Lorem.sentence, category: category.name, category_id: category.id, upc: Faker::Number.number(8), tags: ["Organic"],
                         total_servings: Faker::Number.number(1), servings_unit: ['g', 'lb', 'oz'].sample, weight: Faker::Number.number(1), price: Faker::Commerce.price)
     link = RetailerUser.create(retailer_id: @retailer.id, user_id: @user.id)
-    RetailerItemPrice.create(retailer_id: @retailer.id, item_id: @item.id, price: Faker::Commerce.price)
+    @retailer_item = RetailerItemPrice.create(retailer_id: @retailer.id, item_id: @item.id, price: Faker::Commerce.price)
   end
 
-  test "on sale ?" do
+  test "price for item" do
+    actual = @retailer.price_for(@item)
+    expected = @retailer_item
+    assert_equal = expected, actual
+  end
+
+  test "item on sale ?" do
     actual = @retailer.on_sale?(@item)
     expected = false
     assert_equal expected, actual
