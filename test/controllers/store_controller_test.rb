@@ -1,16 +1,19 @@
 require 'test_helper'
 
+# This test is commented out, getting a mocha error that haven't figured out...yet
+# Mocha::StubbingError: can't stub method on frozen object: nil
+
 # class StoreControllerTest < ActionController::TestCase
-#
+
 #   setup do
 #     state = 'TX'
 #     cities = ['Austin', 'Round Rock', 'Katy', 'Dallas', 'San Marcos', 'San Antonio', 'Houston', 'Waco', 'Addison', 'Bastrop', 'Cedar Park', 'Bee Cave', 'West Lake', 'Paris']
-#     retailer = ['Whole Foods Market', 'HEB', 'Randalls', 'Trader Joe', 'Sprouts', 'Natural Grocer', 'Target', 'Walmart'].sample
-#     @retailer = Retailer.create(name: retailer)
+#     retailer_names = ['Whole Foods Market', 'HEB', 'Randalls', 'Trader Joe', 'Sprouts', 'Natural Grocer', 'Target', 'Walmart']
+#     @retailer = Retailer.create(name: retailer_names.sample)
+#     @user = User.create(email: Faker::Internet.email, password: 'password', admin: true, name: 'moe')
+#     link = RetailerUser.create(retailer_id: @retailer.id, user_id: @user.id)
 #     @store = Store.create(store_id: (1000..2000).to_a.sample, retailer_id: @retailer.id, city: cities.sample,
 #                           street: Faker::Address.street_address, state: state, zip: (30000..40000).to_a.sample)
-#     @user = User.create(email: Faker::Internet.email, password: 'password', admin: true, name: Faker::Name.name)
-#     link = RetailerUser.create(retailer_id: @retailer.id, user_id: @user.id)
 #     @request.env["devise.mapping"] = Devise.mappings[:user]
 #     @request.env["HTTP_REFERER"]   = 'http://localhost:3000/'
 #     @controller.stubs(:current_user).returns(@user)

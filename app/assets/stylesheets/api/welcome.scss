@@ -10,3 +10,9 @@ $info-background-color: lighten(#9E9E9E, 30%);
   background-color: $info-background-color;
 }
 
+.right-doc {
+  margin: 20px;
+  background-color: white;
+  // box-shadow: inset -4 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: inset 3px 2px 10px -4px rgba(0,0,0, 0.5), inset -3px -2px 10px -4px rgba(0,0,0,0.5);
+}
