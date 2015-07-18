@@ -13,9 +13,15 @@ class RetailerTest < ActiveSupport::TestCase
     RetailerItemPrice.create(retailer_id: @retailer.id, item_id: @item.id, price: Faker::Commerce.price)
   end
 
-test "organics" do
+  test "organics" do
     actual = @retailer.organics
     expected = [@item]
+    assert_equal expected, actual
+  end
+
+  test "all organics counts" do
+    actual = Retailer.all_organic_counts
+    expected = [{id: @retailer.id, org_count: 1}]
     assert_equal expected, actual
   end
 end
