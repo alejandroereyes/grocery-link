@@ -5,12 +5,6 @@ class Item < ActiveRecord::Base
   include PgSearch
   pg_search_scope :get_full_item_info, :against => :name, :using => [:tsearch]
 
-  def self.import(file)
-    CSV.foreach(file.path, headers: true) do |row|
-      Item.create! row.to_hash
-    end
-  end
-
   def find_all_retailers
     retailers.map{ |retailer| retailer.name }.uniq.
               map{ |name| Retailer.find_by(name: name) }.

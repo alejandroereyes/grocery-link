@@ -14,7 +14,7 @@
   <tbody>
     <% @stores.each do |store| %>
       <tr>
-        <td><a href=<%= "/stores/#{store.id}" %>><%= store.id %></a></td>
+        <td><a href=<%= "/stores/#{store.id}" %>><%= store.id.to_i %></a></td>
         <td><%= store.street.titleize %></td>
         <td><%= store.city.titleize %></td>
         <td><%= store.state %></td>
