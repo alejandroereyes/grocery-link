@@ -120,21 +120,15 @@ h2, h4 {
   font-family: Quicksand;
 }
 
-.right-doc {
-
-}
-
-.left-doc {
-
-}
-
 .on-this-page {
   color: $secondary-color !important;
 }
 
-span.title {
+.title-for-doc {
   font-size: 18px;
+  font-weight: bold;
   color: lighten($primary-color, 10%) !important;
+  line-height: 2em;
 }
 
 .btn.modal-trigger {
