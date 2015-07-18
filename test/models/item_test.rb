@@ -12,12 +12,6 @@ class ItemTest < ActiveSupport::TestCase
                         total_servings: Faker::Number.number(1), servings_unit: ['g', 'lb', 'oz'].sample, weight: Faker::Number.number(1), price: Faker::Commerce.price)
     link = RetailerUser.create(retailer_id: @retailer.id, user_id: @user.id)
     RetailerItemPrice.create(retailer_id: @retailer.id, item_id: @item.id, price: Faker::Commerce.price)
-    # @file = fixture_file_upload('/test_files/my_cool_csv.csv', 'text/csv')
-    # @request.env["devise.mapping"] = Devise.mappings[:user]
-    # @request.env["HTTP_REFERER"]   = 'http://localhost:3000/'
-    # @controller.stubs(:current_user).returns(@user)
-    # @controller.stubs(:current_retailer).returns([retailer])
-    # sign_in @user
   end
 
   test "find all the retailers" do
@@ -26,18 +20,4 @@ class ItemTest < ActiveSupport::TestCase
     assert_equal expected, actual
   end
 end
-# class RoomTest < ActiveSupport::TestCase
 
-#   test "company_rooms returns all the companies" do
-#     company = Company.create!(name: 'katas')
-#     company_id = company.id
-#     foo_room   = Room.create!(name: 'foobar',   company_id: company_id, max_occupancy: 10, location: 'florida')
-#     fizz_room  = Room.create!(name: 'fizzbuzz', company_id: company_id, max_occupancy: 10, location: 'florida')
-#     expected   = [
-#       ['foobar',   foo_room.id],
-#       ['fizzbuzz', fizz_room.id]
-#     ]
-#     actual = Room.company_rooms(company_id)
-#     assert_equal expected, actual
-#   end
-# end
