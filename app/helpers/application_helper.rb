@@ -5,6 +5,6 @@ module ApplicationHelper
   end
 
   def active_if(path)
-    toggle_class_to('on-page', path)
+    toggle_class_to('active-turn-this-green', path)
   end
 end

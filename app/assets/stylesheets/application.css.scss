@@ -100,8 +100,16 @@ input {
   color: $primary-color;
 }
 
-nav ul a {
+nav.my-cool-nav ul a {
   color: lighten(#9E9E9E, 15%);
+
+  &:hover, .active-turn-this-green {
+    color: $secondary-color !important;
+  }
+
+  .active-turn-this-green {
+    color: $secondary-color !important;
+  }
 
   span {
     color: $secondary-color;
