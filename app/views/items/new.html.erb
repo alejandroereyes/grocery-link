@@ -4,15 +4,29 @@
   </div>
 </div>
 <div class='row'>
-  <div class='col-md-4 col-md-offset-4'>
-    <p class='upload'>Upload a CSV file</p>
-    <%= form_tag csv_new_items_path, multipart: true do %>
-      <%= file_field_tag :file, class: 'file-csv-name' %>
-      <%= submit_tag "Import New Items", class: "submit" %>
-    <% end %>
+  <div class='col-md-4 col-md-offset-4 box-for-modal'>
+
+     <!-- Modal Trigger -->
+    <button data-target="modal1" class="btn modal-trigger">Upload CSV File</button>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>CSV Upload</h4>
+        <p>Click on Choose File to select your file.</p>
+        <p>Then click Import New Item to upload your file</p>
+     </div>
+      <div class="modal-footer">
+        <%= form_tag csv_new_items_path, multipart: true do %>
+          <div class='row in-modal'><%= file_field_tag :file, class: 'file-csv-name' %></div>
+          <div class='row in-modal'><%= submit_tag "Import New Items", class: "submit" %></div>
+        <% end %>
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Done</a>
+      </div>
+    </div>
+
   </div>
 </div>
+<div class='forms-box'>
+  <%= render 'form' %>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', items_path %>

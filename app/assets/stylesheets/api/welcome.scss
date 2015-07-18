@@ -2,12 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$info-background-color: lighten(#9E9E9E, 30%);
 
 
+.collapsible-body {
 
-span.title {
-  font-size: 18px;
-  color: lighten($primary-color, 10%);
+  background-color: $info-background-color;
 }
-
 

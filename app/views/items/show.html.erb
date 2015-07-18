@@ -54,5 +54,4 @@
   <%= @item.upc %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= button_to 'Edit', edit_item_path(@item), method: :get ,class: 'submit' %>

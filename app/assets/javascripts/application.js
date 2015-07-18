@@ -28,4 +28,5 @@ $( document ).ready(function(){
       accordion : false
   });
   $('#table_for_data').dataTable();
+  $('.modal-trigger').leanModal();
 });

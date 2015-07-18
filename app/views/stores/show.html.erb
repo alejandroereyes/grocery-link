@@ -23,5 +23,5 @@
   <%= @store.zip %>
 </p>
 
-<%= link_to "Edit", edit_store_path(@store.id) %> |
-<%= link_to "Delete", store_path(@store.id), method: :delete %>
+<%= button_to "Edit", edit_store_path(@store.id), method: :get, class: 'submit' %>
+<%= button_to "Delete", store_path(@store.id), method: :delete, class: 'submit' %>
