@@ -31,7 +31,7 @@ names = ["Amy's", 'evol', 'totinos', 'organic valley', 'ice cream', 'tuna', 'bee
   retailer = Retailer.create(name: company)
 
   10.times do
-    user = User.create(name: Faker::Name.name, email: 'user@example.com', password: 'password', password_confirmation: 'password',
+    user = User.create(name: Faker::Name.name, email: Faker::Internet.safe_email, password: 'password', password_confirmation: 'password',
                        client_id: SecureRandom.hex(8), secret_id: SecureRandom.hex(32))
 
     RetailerUser.create(retailer_id: retailer.id, user_id: user.id)
