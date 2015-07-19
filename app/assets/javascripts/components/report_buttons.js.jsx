@@ -11,7 +11,7 @@ var HighReportButton = React.createClass ({
   },
 
   render: function () {
-    var word = this.state.on ? 'Close Report' : 'Get Report';
+    var word = this.state.on ? 'Close Report' : 'Run Report';
     var sendBox = this.state.on ? 'report-goes-here' : 'hidden';
     return (
       <div>
@@ -53,7 +53,7 @@ var LowReportButton = React.createClass ({
   },
 
   render: function () {
-    var word = this.state.on ? 'Close Report' : 'Get Report';
+    var word = this.state.on ? 'Close Report' : 'Run Report';
     var sendBox = this.state.on ? 'report-goes-here' : 'hidden';
     return (
       <div>

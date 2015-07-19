@@ -13,3 +13,6 @@
   * To request by id; returns all retailer's that carry the item and price for each retailer: `/api/products/byid?client_id=CLIENT_ID&secret_id=SECRECT_ID&id=PRODUCT_ID`
 
   * To request products that match by name; returns each product's info and retailers that carry the item: `/api/products/byname?client_id=CLIENT_ID&secret_id=SECRECT_ID&name=PRODUCT_NAME`
+
+  ## Details
+    * Canvas.JS was used to chart dynamic charts, `http://creativecommons.org/licenses/by-nc/3.0/deed.en_US`

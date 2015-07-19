@@ -1,27 +1,31 @@
-<p>
-  <strong>Store Id:</strong>
-  <%= @store.store_id %>
-</p>
+<div class='row show-page-row'>
+  <div class='col-md-12 show-page-info-block'>
+    <p>
+      <h6>Store Id:</h6>
+      <%= @store.store_id %>
+    </p>
 
-<p>
-  <strong>Street:</strong>
-  <%= @store.street %>
-</p>
+    <p>
+      <h6>Street:</h6>
+      <%= @store.street %>
+    </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @store.city %>
-</p>
+    <p>
+      <h6>City:</h6>
+      <%= @store.city %>
+    </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @store.state %>
-</p>
+    <p>
+      <h6>State:</h6>
+      <%= @store.state %>
+    </p>
 
-<p>
-  <strong>Zip Code:</strong>
-  <%= @store.zip %>
-</p>
+    <p>
+      <h6>Zip Code:</h6>
+      <%= @store.zip %>
+    </p>
 
-<%= button_to "Edit", edit_store_path(@store.id), method: :get, class: 'submit' %>
-<%= button_to "Delete", store_path(@store.id), method: :delete, class: 'submit' %>
+    <%= button_to "Edit", edit_store_path(@store.id), method: :get, class: 'submit on-show' %>
+    <%= button_to "Delete", store_path(@store.id), method: :delete, class: 'submit on-show' %>
+  </div>
+</div>

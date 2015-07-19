@@ -41,7 +41,6 @@ end
 
 group :development, :test do
   gem 'pry'
-  gem 'faker'
 end
 gem "codeclimate-test-reporter", {:group=>:test, :require=>nil}
 gem 'bullet', group: :development
@@ -58,4 +57,5 @@ gem "mocha", "~> 1.1"
 gem 'pg_search'
 gem 'materialize-sass'
 gem "jquery-datatables-rails", github: 'rweng/jquery-datatables-rails'
+gem 'faker'
 

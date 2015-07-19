@@ -6,6 +6,7 @@
 @import 'api/welcome';
 
 $bone-white: #F8FAF5;
+$reg-grey: #9E9E9E;
 
 $nav-lg-font-fit: "only screen and (max-width : #{1092})" !default;
 
@@ -165,4 +166,22 @@ div.row.in-modal {
   margin-top: 25px;
 }
 
+.show-page-row {
+  margin: 30px 0 30px 0;
+
+  .show-page-info-block {
+    background-color: lighten($reg-grey, 15%);
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+    display: inline-block;
+
+    h6 {
+      font-weight: bold;
+    }
+
+    .on-show{
+      display: inline-block;
+    }
+  }
+}
 

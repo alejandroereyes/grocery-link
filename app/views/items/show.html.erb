@@ -1,57 +1,60 @@
+<div class='row show-page-row'>
+  <div class='col-md-12 show-page-info-block'>
+    <p>
+      <h6>Brand:</h6>
+      <%= @item.brand %>
+    </p>
 
-<p>
-  <strong>Brand:</strong>
-  <%= @item.brand %>
-</p>
+    <p>
+      <h6>Name:</h6>
+      <%= @item.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
+    <p>
+      <h6>Manufacturer:</h6>
+      <%= @item.manufacturer %>
+    </p>
 
-<p>
-  <strong>Manufacturer:</strong>
-  <%= @item.manufacturer %>
-</p>
+    <p>
+      <h6>Category:</h6>
+      <%= @item.category %>
+    </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @item.category %>
-</p>
+    <p>
+      <h6>Ingredients:</h6>
+      <%= @item.ingredients %>
+    </p>
 
-<p>
-  <strong>Ingredients:</strong>
-  <%= @item.ingredients %>
-</p>
+    <p>
+      <h6>Description:</h6>
+      <%= @item.description %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
+    <p>
+      <h6>Tags:</h6>
+      <%= @item.tags.join(', ') %>
+    </p>
 
-<p>
-  <strong>Tags:</strong>
-  <%= @item.tags.join(', ') %>
-</p>
+    <p>
+      <h6>Total servings:</h6>
+      <%= @item.total_servings %>
+    </p>
 
-<p>
-  <strong>Total servings:</strong>
-  <%= @item.total_servings %>
-</p>
+    <p>
+      <h6>Servings unit:</h6>
+      <%= @item.servings_unit %>
+    </p>
 
-<p>
-  <strong>Servings unit:</strong>
-  <%= @item.servings_unit %>
-</p>
+    <p>
+      <h6>Weight:</h6>
+      <%= @item.weight %>
+    </p>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @item.weight %>
-</p>
+    <p>
+      <h6>Upc:</h6>
+      <%= @item.upc %>
+    </p>
 
-<p>
-  <strong>Upc:</strong>
-  <%= @item.upc %>
-</p>
-
-<%= button_to 'Edit', edit_item_path(@item), method: :get ,class: 'submit' %>
+    <%= button_to 'Edit', edit_item_path(@item), method: :get ,class: 'submit on-show' %>
+  </div>
+</div>
