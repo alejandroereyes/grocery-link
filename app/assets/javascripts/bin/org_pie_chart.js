@@ -1,5 +1,5 @@
 
-$(document).ready( function getMyCoolChart() {
+function getMyCoolChart() {
 
   var dataPoints = [];
 
@@ -30,4 +30,4 @@ $(document).ready( function getMyCoolChart() {
   });
 
   chart.render();
-});
+};
