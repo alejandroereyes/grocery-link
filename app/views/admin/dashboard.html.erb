@@ -1,3 +1,41 @@
+  <script type="text/javascript">
+
+  var dataPoints = [
+
+                    ];
+
+  function getOrgList() {
+      $.get('/admin/org_list', function (data){
+
+        for (var i = 0; i < data.length; i++) {
+          dataPoints.push({ label: data[i]['id'], y: data[i]['org_count'] });
+        }; // for loop-end
+      }); // get-outer getOrgList-inner
+    }; // getOrgList-outer
+
+    getOrgList();
+
+  window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+
+      title:{
+        text: "All Retailers Organic Count"
+      },
+      data: [//array of dataSeries
+        { //dataSeries object
+
+         /*** Change type "column" to "bar", "area", "line" or "pie"***/
+         type: "pie",
+         dataPoints : dataPoints
+        }
+       ]
+     });
+
+    chart.render();
+  }
+  </script>
+
 <div class='dash-page'>
   <div class='row dash-header'>
     <div class='col-xs-9'>
@@ -40,67 +78,56 @@
     </div>
   </div>
   <div class='row reports-detail'>
-    <div class='col-md-4 col-md-offset-1'>
-      <h4>Top 5 Highest Priced item compared to other retailers</h4>
+    <div class='col-md-3'>
+      <h4>50 Highest Priced items compared to other retailers</h4>
       <%= react_component("HighReportButton") %>
     </div>
-     <div class='col-md-2'>
+     <div class='col-md-6'>
       <div class="panel panel-default">
-        <div class="panel-heading">something</div>
-        <div class="panel-body"><%= @all_org_counts %></div>
+        <div id="chartContainer" class='org-pie-chart' style="height: 300px; width: 100%;"></div>
       </div>
     </div>
-    <div class='col-md-4 col-md-offset-1'>
-    <h4>Top 5 Lowest Priced item compared to other retailers</h4>
+    <div class='col-md-3'>
+    <h4>50 Lowest Priced items compared to other retailers</h4>
       <%= react_component('LowReportButton') %>
     </div>
   </div>
 </div>
 
-  <script type="text/javascript">
-  window.onload = function () {
-    var chart = new CanvasJS.Chart("chartContainer", {
+   <script type="text/javascript">
 
-      title:{
-        text: "All Retailers Organic Count"
-      },
-      data: [//array of dataSeries
-        { //dataSeries object
+  // var dataPoints = [
 
-         /*** Change type "column" to "bar", "area", "line" or "pie"***/
-         type: "pie",
-         dataPoints: [
-         { label: "banana", y: 18 },
-         { label: "orange", y: 29 },
-         { label: "apple", y: 40 },
-         { label: "mango", y: 34 },
-         { label: "grape", y: 25 }
-         ]
-       }
-       ]
-     });
+  //                   ];
 
-    var getOrgList = function () {
-      $.get('/admin/org_list', function (data){
-        console.log(data);
-      });
-    };
-    chart.render();
-    getOrgList ();
-  }
-  </script>
-  <div id="chartContainer" style="height: 300px; width: 70%;">
-  </div>
+  // function getOrgList() {
+  //     $.get('/admin/org_list', function (data){
 
+  //       for (var i = 0; i < data.length; i++) {
+  //         dataPoints.push({ label: data[i]['id'], y: data[i]['org_count'] });
+  //       }; // for loop-end
+  //     }); // get-outer getOrgList-inner
+  //   }; // getOrgList-outer
 
+  //   getOrgList();
 
+  // window.onload = function () {
 
+  //   var chart = new CanvasJS.Chart("chartContainer", {
 
+  //     title:{
+  //       text: "All Retailers Organic Count"
+  //     },
+  //     data: [//array of dataSeries
+  //       { //dataSeries object
 
+  //        /*** Change type "column" to "bar", "area", "line" or "pie"***/
+  //        type: "pie",
+  //        dataPoints : dataPoints
+  //       }
+  //      ]
+  //    });
 
-
-
-
-
-
-
+  //   chart.render();
+  // }
+  // </script>

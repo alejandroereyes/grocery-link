@@ -11,9 +11,9 @@ class AdminController < ApplicationController
 
   def org_list
     arr = Retailer.all_organic_counts
-    # arr.map do |row|
-    #   row[:id] = Retailer.find(row[:id]).name if row[:id] == current_retailer_id
-    # end
+    arr.map do |row|
+      row[:id] = Retailer.find(row[:id]).name if row[:id] == current_retailer_id
+    end
     render json: arr
   end
 
@@ -37,7 +37,7 @@ class AdminController < ApplicationController
       current_retailer.first.items.each do |item|
         found_item = block.call(item)
         arr << item if found_item.retailer_id == current_retailer.first.id
-        break if arr.size == 5
+        break if arr.size == 50
       end
     arr
   end
