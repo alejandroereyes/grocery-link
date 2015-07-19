@@ -6,10 +6,42 @@
   margin-bottom: 20px;
 }
 
-.panel {
-  text-align: center;
+.dash-page {
+  margin-top: 30px;
+  padding: 10px;
 
-  .panel-body {
-    font-size: 2em;
+  .dash-header {
+    font-family: Quicksand;
+    font-size: 25px;
+  }
+
+  .row.initial-dash {
+    background-color: white;
+
+    .report-col {
+      padding: 0;
+
+      .each-report {
+        height: 100px;
+        border: 1px solid #9E9E9E;
+        padding: 10px;
+
+        .report-header {
+          font-family: Quicksand;
+        }
+
+        .report-body {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  .reports-detail {
+
+    h4 {
+      font-size: 22px;
+      line-height: 2em;
+    }
   }
 }

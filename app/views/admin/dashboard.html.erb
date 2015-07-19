@@ -1,55 +1,61 @@
-<div class='row'>
-  <div class='col-md-2 col-md-offset-2'>
-    <div class="panel panel-default">
-      <div class="panel-heading">Store Count</div>
-      <div class="panel-body"><%= @store_count %></div>
+<div class='dash-page'>
+  <div class='row dash-header'>
+    <div class='col-xs-9'>
+      <h4>Weclome, <%= current_user.name.titleize %></h4>
+    </div>
+    <div class='col-xs-3'>
+      <span><%= Time.now.strftime("%b %-d %Y, %-l:%M %P") %></span>
     </div>
   </div>
-  <div class='col-md-2 col-md-offset-1'>
-    <div class="panel panel-default">
-      <div class="panel-heading">Items Count</div>
-      <div class="panel-body"><%= @item_count %></div>
+  <div class='row initial-dash'>
+    <div class='col-md-2 report-col'>
+      <div class="each-report">
+        <div class="report-header">Store Count</div>
+        <div class="report-body"><%= @store_count %></div>
+      </div>
+    </div>
+    <div class='col-md-2 report-col'>
+      <div class="each-report">
+        <div class="report-header">Items Count</div>
+        <div class="report-body"><%= @item_count %></div>
+      </div>
+    </div>
+    <div class='col-md-3 report-col'>
+      <div class="each-report">
+        <div class="report-header">Organics Count</div>
+        <div class="report-body"><%= @organics_count %></div>
+      </div>
+    </div>
+    <div class='col-md-3 report-col'>
+      <div class="each-report">
+        <div class="report-header">Organics Mix</div>
+        <div class="report-body"><%= @organics_mix %>%</div>
+      </div>
+    </div>
+    <div class='col-md-2 report-col'>
+      <div class="each-report">
+        <div class="report-header">Organics Ranking</div>
+        <div class="report-body"><%= org_percentile %></div>
+      </div>
     </div>
   </div>
-  <div class='col-md-2 col-md-offset-1'>
-    <div class="panel panel-default">
-      <div class="panel-heading">Organics Count</div>
-      <div class="panel-body"><%= @organics_count %></div>
+  <div class='row reports-detail'>
+    <div class='col-md-4 col-md-offset-1'>
+      <h4>Top 5 Highest Priced item compared to other retailers</h4>
+      <%= react_component("HighReportButton") %>
+    </div>
+     <div class='col-md-2'>
+      <div class="panel panel-default">
+        <div class="panel-heading">something</div>
+        <div class="panel-body"><%= @all_org_counts %></div>
+      </div>
+    </div>
+    <div class='col-md-4 col-md-offset-1'>
+    <h4>Top 5 Lowest Priced item compared to other retailers</h4>
+      <%= react_component('LowReportButton') %>
     </div>
   </div>
 </div>
-<div class='row'>
-  <div class='col-md-2 col-md-offset-2'>
-    <div class="panel panel-default">
-      <div class="panel-heading">Organics Mix</div>
-      <div class="panel-body"><%= @organics_mix %>%</div>
-    </div>
-  </div>
-  <div class='col-md-2 col-md-offset-1'>
-    <div class="panel panel-default">
-      <div class="panel-heading">something</div>
-      <div class="panel-body"><%= @all_org_counts %></div>
-    </div>
-  </div>
-  <div class='col-md-2 col-md-offset-1'>
-    <div class="panel panel-default">
-      <div class="panel-heading">Organics Ranking</div>
-      <div class="panel-body"><%= org_percentile %></div>
-    </div>
-  </div>
-</div>
-
-<div class='row'>
-  <div class='col-md-4 col-md-offset-2'>
-    <h4>Top 5 Highest Priced item compared to other retailers</h4>
-    <%= react_component("HighReportButton") %>
-  </div>
-  <div class='col-md-4 col-md-offset-1'>
-  <h4>Top 5 Lowest Priced item compared to other retailers</h4>
-    <%= react_component('LowReportButton') %>
-  </div>
-</div>
-
 
 
 

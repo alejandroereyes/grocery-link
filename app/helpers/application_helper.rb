@@ -7,4 +7,8 @@ module ApplicationHelper
   def active_if(path)
     toggle_class_to('active-turn-this-green', path)
   end
+
+  def container_fluid_if(path)
+    request.fullpath == path ? 'container-fluid' : 'container'
+  end
 end
