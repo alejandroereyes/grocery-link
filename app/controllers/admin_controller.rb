@@ -11,6 +11,9 @@ class AdminController < ApplicationController
 
   def org_list
     arr = Retailer.all_organic_counts
+    # arr.map do |row|
+    #   row[:id] = Retailer.find(row[:id]).name if row[:id] == current_retailer_id
+    # end
     render json: arr
   end
 

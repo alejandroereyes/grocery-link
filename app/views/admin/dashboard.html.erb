@@ -62,13 +62,13 @@
     var chart = new CanvasJS.Chart("chartContainer", {
 
       title:{
-        text: "Fruits sold in First Quarter"
+        text: "All Retailers Organic Count"
       },
       data: [//array of dataSeries
         { //dataSeries object
 
          /*** Change type "column" to "bar", "area", "line" or "pie"***/
-         type: "column",
+         type: "pie",
          dataPoints: [
          { label: "banana", y: 18 },
          { label: "orange", y: 29 },
@@ -80,7 +80,13 @@
        ]
      });
 
+    var getOrgList = function () {
+      $.get('/admin/org_list', function (data){
+        console.log(data);
+      });
+    };
     chart.render();
+    getOrgList ();
   }
   </script>
   <div id="chartContainer" style="height: 300px; width: 70%;">
