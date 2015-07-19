@@ -3,30 +3,30 @@
     <div class='col-xs-9'>
       <h4>Weclome, <%= current_user.name.titleize %></h4>
     </div>
-    <div class='col-xs-3'>
+    <div class='col-sm-3'>
       <span><%= Time.now.strftime("%b %-d %Y, %-l:%M %P") %></span>
     </div>
   </div>
   <div class='row initial-dash'>
-    <div class='col-md-2 report-col'>
+    <div class='col-sm-2 report-col'>
       <div class="each-report">
         <div class="report-header">Store Count</div>
         <div class="report-body"><%= @store_count %></div>
       </div>
     </div>
-    <div class='col-md-2 report-col'>
+    <div class='col-sm-2 report-col'>
       <div class="each-report">
         <div class="report-header">Items Count</div>
         <div class="report-body"><%= @item_count %></div>
       </div>
     </div>
-    <div class='col-md-3 report-col'>
+    <div class='col-sm-3 report-col'>
       <div class="each-report">
         <div class="report-header">Organics Count</div>
         <div class="report-body"><%= @organics_count %></div>
       </div>
     </div>
-    <div class='col-md-3 report-col'>
+    <div class='col-sm-3 report-col'>
       <div class="each-report">
         <div class="report-header">Organics Mix</div>
         <div class="report-body"><%= @organics_mix %>%</div>
@@ -56,6 +56,35 @@
     </div>
   </div>
 </div>
+
+  <script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer", {
+
+      title:{
+        text: "Fruits sold in First Quarter"
+      },
+      data: [//array of dataSeries
+        { //dataSeries object
+
+         /*** Change type "column" to "bar", "area", "line" or "pie"***/
+         type: "column",
+         dataPoints: [
+         { label: "banana", y: 18 },
+         { label: "orange", y: 29 },
+         { label: "apple", y: 40 },
+         { label: "mango", y: 34 },
+         { label: "grape", y: 25 }
+         ]
+       }
+       ]
+     });
+
+    chart.render();
+  }
+  </script>
+  <div id="chartContainer" style="height: 300px; width: 70%;">
+  </div>
 
 
 

@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$time-lg-and-down: "only screen and (max-width : #{1150})" !default;
+$time-med-and-down: "only screen and (max-width : #{882})" !default;
+$bone-white: #F8FAF5;
+
 .adnav {
   margin-bottom: 20px;
 }
@@ -13,21 +17,60 @@
   .dash-header {
     font-family: Quicksand;
     font-size: 25px;
+
+    h4 {
+      @media #{$small-and-down} {
+        font-size: 28px;
+      }
+    }
+
+    span {
+      @media #{$time-lg-and-down} {
+        font-size: 20px;
+
+         @media #{$medium-and-down} {
+          font-size: 18px;
+
+          @media #{$time-med-and-down} {
+            font-size: 15px;
+
+            @media #{$small-and-down} {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
   }
 
   .row.initial-dash {
     background-color: white;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+
+    @media (max-width: 850px) {
+      border: 0;
+      background-color: $bone-white;
+    }
 
     .report-col {
       padding: 0;
 
       .each-report {
         height: 100px;
-        border: 1px solid #9E9E9E;
         padding: 10px;
+        text-align: center;
+
+        @media (max-width: 851px) {
+          border: 1px solid #DDD;
+          background-color: white;
+          border-radius: 2px;
+          margin: 8px 0 8px 0;
+        }
 
         .report-header {
           font-family: Quicksand;
+          line-height: 2.5em;
         }
 
         .report-body {

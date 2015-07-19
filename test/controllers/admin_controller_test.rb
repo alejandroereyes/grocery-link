@@ -28,6 +28,11 @@ class AdminControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get org list" do
+    get :org_list
+    assert_response :success
+  end
+
   test "should get high list" do
     get :high_list
     assert_response :success

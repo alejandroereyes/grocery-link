@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/admin/dashboard', to: 'admin#dashboard', as: 'dashboard'
   get '/admin/high_list', to: 'admin#high_list', as: 'high_list'
   get '/admin/low_list', to: 'admin#low_list', as: 'low_list'
+  get '/admin/org_list', to: 'admin#org_list', as: 'org_list'
 
   get 'api/docs', to: 'api/welcome#docs', as: "docs"
   root to: 'api/welcome#home'

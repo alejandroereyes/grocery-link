@@ -9,6 +9,11 @@ class AdminController < ApplicationController
     @all_org_counts = Retailer.all_organic_counts
   end
 
+  def org_list
+    arr = Retailer.all_organic_counts
+    render json: arr
+  end
+
   def high_list
     arr = get_records do |item|
       RetailerItemPrice.highest_price_for(item)
