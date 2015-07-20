@@ -24,8 +24,9 @@
       <h6>Zip Code:</h6>
       <%= @store.zip %>
     </p>
-
-    <%= button_to "Edit", edit_store_path(@store.id), method: :get, class: 'submit on-show' %>
-    <%= button_to "Delete", store_path(@store.id), method: :delete, class: 'submit on-show' %>
+    <div class='row for-show-btns'>
+      <%= button_to "Edit", edit_store_path(@store.id), method: :get, class: 'submit on-show' %>
+      <%= button_to "Delete", store_path(@store.id), method: :delete, class: 'submit on-show' %>
+    </div>
   </div>
 </div>

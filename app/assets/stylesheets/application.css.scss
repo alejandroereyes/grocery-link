@@ -114,6 +114,12 @@ nav.my-cool-nav ul a {
     color: $secondary-color !important;
   }
 
+  ul.side-nav {
+    li {
+      color: $reg-grey;
+    }
+  }
+
   span {
     color: $secondary-color;
   }
@@ -121,6 +127,8 @@ nav.my-cool-nav ul a {
   @media #{$nav-lg-font-fit} {
     font-size: 1px;
   }
+
+
 }
 
 .doc-info {
@@ -170,7 +178,7 @@ div.row.in-modal {
   margin: 30px 0 30px 0;
 
   .show-page-info-block {
-    background-color: lighten($reg-grey, 15%);
+    background-color: lighten($reg-grey, 20%);
     padding: 10px 25px 10px 25px;
     border-radius: 5px;
     display: inline-block;
@@ -179,9 +187,65 @@ div.row.in-modal {
       font-weight: bold;
     }
 
-    .on-show{
+    .for-show-btns {
       display: inline-block;
+
+      form {
+        display: inline-block !important;
+        margin-right: 5px;
+      }
     }
   }
 }
 
+.for-photo {
+  height: 100%;
+  width: 900px;
+  background: url("/assets/shopper.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  .my-cool-home-page {
+    color: $secondary-color;
+    text-shadow: 1px 1px 1px lighten(#000000, 15%);
+    font-family: Quicksand;
+    float: right;
+
+    .home-row {
+      margin-bottom: 0;
+
+      .home-text-hero {
+        float: right;
+        text-align: right;
+
+        h1 {
+          margin-top: 100px;
+          line-height: 1.5em;
+
+          $just-under-med-and-down: "only screen and (max-width : #{790})" !default;
+          @media #{$just-under-med-and-down} {
+            display: block;
+            text-align: left;
+          }
+        }
+
+        h3 {
+          margin-left: 20px;
+          color: $primary-color;
+          text-align: left;
+          text-shadow: 0 0 0;
+          line-height: 1.5em;
+
+          $just-under-med-and-down: "only screen and (max-width : #{790})" !default;
+          @media #{$just-under-med-and-down} {
+            display: block;
+            text-align: center;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
