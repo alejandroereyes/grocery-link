@@ -86,9 +86,14 @@ $bone-white: #F8FAF5;
       font-size: 15px;
       line-height: 2em;
     }
-  }
+    .chart-box {
+      height: 300px;
+      border: 1px solid #DDDDDD;
+      border-radius: 2px;
 
-  .org-pie-chart {
+      #chartContainer-for-me.org-pie-chart {
 
+      }
+    }
   }
 }
