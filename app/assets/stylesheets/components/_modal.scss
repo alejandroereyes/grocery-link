@@ -1,3 +1,5 @@
+$reg-grey: #9E9E9E;
+
 .modal {
   @extend .z-depth-4;
 
@@ -26,6 +28,8 @@
 
   .modal-content {
     padding: 24px;
+    background-color: $primary-color;
+    color: lighten($reg-grey, 20%);
   }
   .modal-close {
     cursor: pointer;
