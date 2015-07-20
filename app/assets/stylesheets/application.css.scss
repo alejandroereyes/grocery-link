@@ -114,7 +114,9 @@ nav.my-cool-nav ul a {
     color: $secondary-color !important;
   }
 
-
+  i {
+    color: lighten($reg-grey, 15%);
+  }
 
   span {
     color: $secondary-color;
@@ -285,3 +287,6 @@ div.row.in-modal {
   }
 }
 
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+  color: lighten(#9E9E9E, 25%);
+}
