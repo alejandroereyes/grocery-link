@@ -5,6 +5,8 @@
 $time-lg-and-down: "only screen and (max-width : #{1150})" !default;
 $time-med-and-down: "only screen and (max-width : #{882})" !default;
 $bone-white: #F8FAF5;
+$reg-grey: #9E9E9E;
+$my-cool-border: 1px solid #DDD;
 
 .adnav {
   margin-bottom: 20px;
@@ -94,6 +96,32 @@ $bone-white: #F8FAF5;
       #chartContainer-for-me.org-pie-chart {
 
       }
+    }
+  }
+}
+
+.report-container {
+
+  .report-item {
+    padding: 10px;
+    border-left: $my-cool-border;
+    border-right: $my-cool-border;
+
+    &:nth-child(n):not(:nth-child(1)):not(:nth-last-child(1)) {
+      border-top: $my-cool-border;
+    }
+
+    &:nth-child(1) {
+      border: $my-cool-border;
+      border-bottom: none;
+    }
+
+    &:nth-last-child(1) {
+      border: $my-cool-border;
+    }
+
+    &:hover {
+      background-color: $secondary-color;
     }
   }
 }
