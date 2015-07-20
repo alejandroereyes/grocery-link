@@ -45,6 +45,13 @@ a {
 
 body {
   background-color: $bone-white;
+  padding: 0;
+
+  .fader {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 100%;
+    margin: 0;
+  }
 }
 
 .pagination {
@@ -162,6 +169,10 @@ div.forms-box {
 
 div.box-for-modal {
   text-align: center;
+  border-radius: 0;
+  p {
+    letter-spacing: 1px;
+  }
 }
 
 div.row.in-modal {
@@ -291,4 +302,9 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
   color: lighten(#9E9E9E, 25%);
 }
 
-
+.hiddendiv.common {
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
