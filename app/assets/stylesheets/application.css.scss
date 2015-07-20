@@ -206,11 +206,42 @@ div.row.in-modal {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  color: $secondary-color;
-  font-family: Quicksand;
-  font-weight: bold;
 
-  .home-photo {
+  .my-cool-home-page {
+    color: $secondary-color;
+    text-shadow: 1px 1px 1px lighten(#000000, 15%);
+    font-family: Quicksand;
+    float: right;
 
+    .home-text-hero {
+      float: right;
+      text-align: right;
+
+      h1 {
+        margin-top: 100px;
+        line-height: 1.5em;
+
+        $just-under-med-and-down: "only screen and (max-width : #{790})" !default;
+        @media #{$just-under-med-and-down} {
+          display: block;
+          text-align: left;
+        }
+      }
+
+      h3 {
+        margin-left: 20px;
+        color: $primary-color;
+        text-align: left;
+        text-shadow: 0 0 0;
+        line-height: 1.5em;
+
+        $just-under-med-and-down: "only screen and (max-width : #{790})" !default;
+        @media #{$just-under-med-and-down} {
+          display: block;
+          text-align: center;
+          margin-left: 0;
+        }
+      }
+    }
   }
 }
