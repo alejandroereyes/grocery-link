@@ -51,9 +51,9 @@ var ShowList = React.createClass({
     var list = this.props.item;
     if (list) {
       var items = list.map(function (item) { return (
-        <li>{item.name}</li>
+          <li className='report-item'><a href={'/items/' + item.id}>{item.name}</a></li>
         ); });
-      return (<div>{items}</div>);
+      return (<div className='report-container'><ul>{items}</ul></div>);
     } else {
       return (<div/>);
     }
