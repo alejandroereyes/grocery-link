@@ -200,7 +200,6 @@ div.row.in-modal {
 
 .for-photo {
   height: 100%;
-  width: 900px;
   background: url("/assets/shopper.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -247,5 +246,45 @@ div.row.in-modal {
         }
       }
     }
+  }
+}
+
+.table.table-hover.display {
+
+  .dataTables_info {
+    color: $bone-white;
+  }
+}
+
+#table_for_data_info {
+  color: $bone-white;
+}
+#table_for_data_paginate {
+  color: $bone-white;
+  display: hidden;
+
+  &:hover {
+    color: $bone-white;
+    display: hidden;
+  }
+}
+
+#table_for_data_previous {
+  color: $bone-white;
+  display: hidden;
+
+  &:hover {
+    color: $bone-white;
+    display: hidden;
+  }
+}
+
+.paginate_button {
+  color: $bone-white;
+  display: hidden;
+
+  &:hover {
+    color: $bone-white;
+    display: hidden;
   }
 }

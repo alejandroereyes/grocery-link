@@ -62,7 +62,7 @@ chart = new CanvasJS.Chart("chartContainer-for-me", {
   data: [{ type: "pie", dataPoints: dataPoints }] /*** Change type "column" to "bar", "area", "line" or "pie"***/
 });
 
-chart.render();
+// chart.render();
 
 
 // >>>>>>> c6464dba1ceb64db3e764efb9c277f9f8027b35a
