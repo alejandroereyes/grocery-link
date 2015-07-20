@@ -201,7 +201,7 @@ div.row.in-modal {
 .for-photo {
   height: 100%;
   width: 900px;
-  background: url("/assets/shopping_raw.png") no-repeat center center fixed;
+  background: url("/assets/shopper.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -213,33 +213,37 @@ div.row.in-modal {
     font-family: Quicksand;
     float: right;
 
-    .home-text-hero {
-      float: right;
-      text-align: right;
+    .home-row {
+      margin-bottom: 0;
 
-      h1 {
-        margin-top: 100px;
-        line-height: 1.5em;
+      .home-text-hero {
+        float: right;
+        text-align: right;
 
-        $just-under-med-and-down: "only screen and (max-width : #{790})" !default;
-        @media #{$just-under-med-and-down} {
-          display: block;
-          text-align: left;
+        h1 {
+          margin-top: 100px;
+          line-height: 1.5em;
+
+          $just-under-med-and-down: "only screen and (max-width : #{790})" !default;
+          @media #{$just-under-med-and-down} {
+            display: block;
+            text-align: left;
+          }
         }
-      }
 
-      h3 {
-        margin-left: 20px;
-        color: $primary-color;
-        text-align: left;
-        text-shadow: 0 0 0;
-        line-height: 1.5em;
+        h3 {
+          margin-left: 20px;
+          color: $primary-color;
+          text-align: left;
+          text-shadow: 0 0 0;
+          line-height: 1.5em;
 
-        $just-under-med-and-down: "only screen and (max-width : #{790})" !default;
-        @media #{$just-under-med-and-down} {
-          display: block;
-          text-align: center;
-          margin-left: 0;
+          $just-under-med-and-down: "only screen and (max-width : #{790})" !default;
+          @media #{$just-under-med-and-down} {
+            display: block;
+            text-align: center;
+            margin-left: 0;
+          }
         }
       }
     }
