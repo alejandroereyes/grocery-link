@@ -11,4 +11,8 @@ module ApplicationHelper
   def container_fluid_if(path)
     request.fullpath == path ? 'container-fluid' : 'container'
   end
+
+  def photo_if_page(path)
+    toggle_class_to('for-photo', root_path)
+  end
 end
