@@ -22,7 +22,7 @@ bool = [true, false]
 
 names = ["Amy's", 'evol', 'totinos', 'organic valley', 'ice cream', 'tuna', 'beef', 'chicken', 'bread', 'gravy',
          'pasta', 'sauce', 'kombucha', 'coffee', 'tortilla', 'hummus', 'shrimp', 'crab', 'oyster', 'milk',
-         'bagel', 'danish', 'chocolate', 'candy', 'gum', 'cola', 'root beer', 'gerber', 'taco', 'pad thai',
+         'bagel', 'danish', 'chocolate', 'gum', 'cola', 'root beer', 'gerber', 'taco', 'pad thai',
          'sausage', 'spicy', 'mild', 'medium', 'orange', 'strawberry', 'apple', 'chili', 'soup',
          'grape', 'corn', 'goat', 'asiago', 'wine', 'cake', 'ale', 'egg', 'yogurt', 'ghee', 'tomato']
 
