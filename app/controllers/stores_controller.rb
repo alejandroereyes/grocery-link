@@ -29,6 +29,7 @@ class StoresController < ApplicationController
       @store.city = @store.city.downcase
       @store.retailer_id = current_retailer_id
       if @store.save
+        current_count = Store.count
         redirect_to @store, notice: 'Store was successfully created.'
       else
         render :new

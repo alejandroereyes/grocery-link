@@ -19,30 +19,40 @@ class ItemsController < ApplicationController
   end
 
   def create
+    old_count = Item.count
     @item = Item.new(item_params)
     if @item.save
+      new_count = Item.count
+      var_count = new_count - old_count
       ItemHelp.save_price_n_link(current_retailer_id, @item, price_params)
-      redirect_to @item, notice: 'Item was successfully created.'
+      redirect_to @item, notice: "#{var_count} item was successfully created."
     else
       render :new
     end
   end
 
   def csv_new_items
+    old_count = Item.count
     begin
       CSV.foreach(params['file'].path, headers: true) do |row|
         if row['name'] && row['price']
           @item = Item.new
           ['name', 'brand', 'ingredients', 'description', 'total_servings',
            'tags', 'servings_unit', 'weight', 'upc', 'manufacturer'].each do |key|
-            @item[key.to_sym] = row[key]
-           end
-          @item.save
+            if key == 'tags'
+              @item.update_attribute :tags, row['tags'].split(',')
+            else
+              @item[key.to_sym] = row[key]
+            end
+            @item.save
+          end
           @category = row['category'].titleize
           ItemHelp.help_csv_save(current_retailer_id, @item, {'price'=> row['price'], 'product_id'=> row['product_id']}, @category)
         end
       end
-      redirect_to :dashboard, notice: "File upload Succesful"
+      new_count = Item.count
+      var_count = new_count - old_count
+      redirect_to :dashboard, notice: "File upload Succesful. #{var_count} items added"
     rescue StandardError => e
       redirect_to :back, alert: "CSV could not be processed"
     end
