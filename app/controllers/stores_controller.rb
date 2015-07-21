@@ -24,7 +24,7 @@ class StoresController < ApplicationController
   end
 
   def create
-    if good_params
+    if good_params?
       @store = Store.new(store_params)
       @store.city = @store.city.downcase
       @store.retailer_id = current_retailer_id
@@ -34,7 +34,7 @@ class StoresController < ApplicationController
         render :new
       end
     else
-      render :new, notice: 'Missing Field'
+      render :new, alert: 'Missing Field'
     end
     rescue StandardError => e
       redirect_to :back, alert: "Missing Field"
@@ -55,11 +55,11 @@ class StoresController < ApplicationController
 
   private
 
-    def store_params
-      params.require(:store).permit(:store_id, :street, :city, :state, :zip)
-    end
+  def store_params
+    params.require(:store).permit(:store_id, :street, :city, :state, :zip)
+  end
 
-    def good_params
-      params.has_value?("") ? true : false
-    end
+  def good_params?
+    !(store_params.has_value?(""))
+  end
 end
