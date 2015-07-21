@@ -58,4 +58,5 @@ gem 'pg_search'
 gem 'materialize-sass'
 gem "jquery-datatables-rails", github: 'rweng/jquery-datatables-rails'
 gem 'faker'
+gem 'momentjs-rails'
 
