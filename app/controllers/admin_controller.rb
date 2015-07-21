@@ -37,7 +37,7 @@ class AdminController < ApplicationController
       current_retailer.first.items.each do |item|
         found_item = block.call(item)
         arr << item if found_item.retailer_id == current_retailer.first.id
-        break if arr.size == 50
+        break if arr.size == 20
       end
     arr
   end
