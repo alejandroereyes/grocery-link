@@ -30,4 +30,7 @@ $( document ).ready(function(){
   });
   $('#table_for_data').dataTable();
   $('.modal-trigger').leanModal();
+  $('.timestring').each(function() {
+  this.textContent = moment(this.textContent).format('lll');
+});
 });

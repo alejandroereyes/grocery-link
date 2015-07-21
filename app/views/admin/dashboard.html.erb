@@ -5,7 +5,9 @@
       <h4>Weclome, <%= current_user.name.titleize %></h4>
     </div>
     <div class='col-sm-3'>
-      <span><%= Time.now.strftime("%b %-d %Y, %-l:%M %P") %></span>
+    <time class="today-time"
+      datetime="<%= Time.now.to_datetime %>"
+      ><span class='timestring'><%= Time.now.to_datetime %></span></time>
     </div>
   </div>
   <div class='row initial-dash'>
