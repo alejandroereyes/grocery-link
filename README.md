@@ -5,21 +5,22 @@
 
 ## Link
   [groceryLink](www.grocerylink.io)
-
+  * example user: user@example.com
+  * example password: password
 
 ## Process
   [My Trello Board with UMLs & wireframes](https://trello.com/b/j78ElnvB/alejandro-reyes-grocerylink)
 
-## Method calls
-  * To request all categories; returns all categories: `http://grocerylink.io/api/lookup/categories?client_id=560650ec4dd6dc9a&secret_id=95d5e9f6cf2ce347d0a0ba66d8baf005a14aeebc5bb68be6e0b54d803b4c3e2f`
+## Example Method calls
+  * To request all categories; returns all categories: `http://grocerylink.io/api/lookup/categories?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6`
 
-  * To request all retailers; returns all retailers: `http://grocerylink.io/api/lookup/retailers?client_id=CLIENT_ID&secret_id=SECRECT_ID`
+  * To request all retailers; returns all retailers: `http://grocerylink.io/api/lookup/retailers?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6`
 
-  * To request all retailers in area; returns all retailers in city & state: `http://grocerylink.io/api/lookup/retailersinarea??client_id=CLIENT_ID&secret_id=SECRECT_ID&city=CITY&state=STATE`
+  * To request all retailers in area; returns all retailers in city & state: `http://grocerylink.io/api/lookup/retailersinarea?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6&city=Austin&state=TX`
 
-  * To request by id; returns all retailer's that carry the item and price for each retailer: `http://grocerylink.io/api/products/byid?client_id=CLIENT_ID&secret_id=SECRECT_ID&id=PRODUCT_ID`
+  * To request by id; returns all retailer's that carry the item and price for each retailer: `http://grocerylink.io/api/products/byid?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6&id=4`
 
-  * To request products that match by name; returns each product's info and retailers that carry the item: `http://grocerylink.io/api/products/byname?client_id=CLIENT_ID&secret_id=SECRECT_ID&name=PRODUCT_NAME`
+  * To request products that match by name; returns each product's info and retailers that carry the item: `http://grocerylink.io/api/products/byname?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6&name=Amy`
 
 ## Set up
   1. clone repo
