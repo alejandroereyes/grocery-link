@@ -27,9 +27,9 @@
   3. run `rake db:create db:migrate db:seed`
 
 ## How to run tests
-  * make sure rake tasts above have run
-  * unless you'll be using code climate remove 1st two line from `test_helper.rb`. If you wish to sign up to track coverage, go to: [Code Climate](https://codeclimate.com/) and follow their instructions.
-  * to have tests run with each push to github, go to: [Travis CI](https://travis-ci.org/) and follow their instructions to have them run your tests.
+  * make sure the rake tasks above have run
+  * unless you'll be using code climate, remove 1st two lines from `test_helper.rb`. If you wish to sign up to track coverage, go to: [Code Climate](https://codeclimate.com/) and follow their instructions.
+  * to have tests run with each push and tracked from your github repo, go to: [Travis CI](https://travis-ci.org/) and follow their instructions to have them run your tests.
   * run `rake test` in the terminal to run locally.
 
 ## Dependancies
