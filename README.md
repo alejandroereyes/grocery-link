@@ -5,7 +5,7 @@
 
 ## Link
   [groceryLink](www.grocerylink.io)
-  * example user: user@example.com
+  * example user: [user@example.com](www.grocerylink.io)
   * example password: password
 
 ## Process
@@ -55,3 +55,6 @@
     * `will_paginate-boostrap`
     * `faker`
 
+## Contact Info
+  * [LinkedIn](https://www.linkedin.com/in/alexereyes)
+  * alejandroereyes@gmail.com
