@@ -1,7 +1,10 @@
 [![Build Status](https://travis-ci.org/alejandroereyes/grocery-link.svg?branch=master)](https://travis-ci.org/alejandroereyes/grocery-link)    [![Code Climate](https://codeclimate.com/github/alejandroereyes/grocery-link/badges/gpa.svg)](https://codeclimate.com/github/alejandroereyes/grocery-link)    [![Test Coverage](https://codeclimate.com/github/alejandroereyes/grocery-link/badges/coverage.svg)](https://codeclimate.com/github/alejandroereyes/grocery-link/coverage)
 
 # Grocery Link
-  A web api for grocery retailers to upload their data product data.
+  A web REST API for grocery retailers to upload their product data and for developers to access.
+
+## Trello Board with UMLs
+  [My Trello Board with UMLs](https://trello.com/b/j78ElnvB/alejandro-reyes-grocerylink)
 
 ## Method calls
   * To request all categories; returns all categories: `/api/categories?client_id=CLIENT_ID&secret_id=SECRECT_ID`
