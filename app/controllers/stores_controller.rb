@@ -42,6 +42,7 @@ class StoresController < ApplicationController
   end
 
   def update
+    @store = Store.find(params[:id])
     if @store.update(store_params)
       redirect_to @store, notice: 'Store was successfully updated.'
     else
@@ -50,6 +51,7 @@ class StoresController < ApplicationController
   end
 
   def destroy
+    @store = Store.find(params[:id])
     @store.destroy
     redirect_to stores_url, notice: 'Store was successfully destroyed.'
   end
