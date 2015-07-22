@@ -14,16 +14,15 @@ class Api::ProductsControllerTest < ActionController::TestCase
     @secret_id = @user.secret_id
     @request.env["devise.mapping"] = Devise.mappings[:user]
     @request.env["HTTP_REFERER"]   = 'http://localhost:3000/'
-    @controller.stubs(:verify_client).returns(true)
   end
 
   test "should get products by name" do
     get :products_by_name, name: ''
-    assert_response :missing
+    assert_response :unauthorized
   end
 
   test "should get product by id" do
     get :product_by_id, id: ''
-    assert_response :missing
+    assert_response :unauthorized
   end
 end
