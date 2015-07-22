@@ -4,7 +4,7 @@
   A web REST API for grocery retailers to upload their product data and for developers to access.
 
 ## Link
-  [groceryLink](https://grocerylink.io)
+  [groceryLink](http://grocerylink.io)
 
 
 ## Trello Board with UMLs
