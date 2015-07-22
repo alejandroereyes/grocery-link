@@ -18,6 +18,15 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to @item, notice: 'Item was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
   def create
     old_count = Item.count
     @item = Item.new(item_params)
@@ -55,15 +64,6 @@ class ItemsController < ApplicationController
       redirect_to :dashboard, notice: "File upload Succesful. #{var_count} items added"
     rescue StandardError => e
       redirect_to :back, alert: "CSV could not be processed"
-    end
-  end
-
-  def update
-    @item = Item.find(params[:id])
-    if @item.update(item_params)
-      redirect_to @item, notice: 'Item was successfully updated.'
-    else
-      render :edit
     end
   end
 
