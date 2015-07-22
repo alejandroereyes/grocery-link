@@ -1,8 +1,5 @@
 require 'test_helper'
 
-# This test is commented out, getting a mocha error that haven't figured out...yet
-# Mocha::StubbingError: can't stub method on frozen object: nil
-
 class StoreControllerTest < ActionController::TestCase
 
   setup do
