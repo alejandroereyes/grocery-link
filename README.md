@@ -4,8 +4,8 @@
   A web REST API for grocery retailers to upload their product data and for developers to access.
 
 ## Link
-  [groceryLink](www.grocerylink.io)
-  * example user: [user@example.com](www.grocerylink.io)
+  [groceryLink](http://grocerylink.io)
+  * example user: [user@example.com](http://grocerylink.io)
   * example password: password
 
 ## Process
