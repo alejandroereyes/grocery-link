@@ -37,6 +37,7 @@
   * [Materializecss](http://materializecss.com/) was used to create most of the styling.
   * [Canvas.JS](http://canvasjs.com/) was used to create dynamic charts, `http://creativecommons.org/licenses/by-nc/3.0/deed.en_US`
   * [DataTables](http://datatables.net/) was used to create data tables.
+  * [React](https://facebook.github.io/react/index.html) was used to run and display reports.
   * Notable gems:
     * `fiagro`
     * `codeclimate-test-reporter`
