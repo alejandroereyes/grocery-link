@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/alejandroereyes/grocery-link.svg?branch=master)](https://travis-ci.org/alejandroereyes/grocery-link)    [![Code Climate](https://codeclimate.com/github/alejandroereyes/grocery-link/badges/gpa.svg)](https://codeclimate.com/github/alejandroereyes/grocery-link)    [![Test Coverage](https://codeclimate.com/github/alejandroereyes/grocery-link/badges/coverage.svg)](https://codeclimate.com/github/alejandroereyes/grocery-link/coverage)
 
 # Grocery Link
-  A web REST API for grocery retailers to upload their product data and for developers to access.
+  A web REST API for grocery retailers to upload their product data and for developers to access that data through HTTP Requests. Built using the [Rails MVC](http://rubyonrails.org/) and using a [PostgreSQL](http://www.postgresql.org/) database.
 
 ## Link
   [groceryLink](http://grocerylink.io)
