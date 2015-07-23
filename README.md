@@ -34,7 +34,7 @@
   * run `rake test` in the terminal to run locally.
 
 ## Dependancies
-  * [Materializecss](http://materializecss.com/) was used to create style
+  * [Materializecss](http://materializecss.com/) was used to create most of the styling.
   * [Canvas.JS](http://canvasjs.com/) was used to create dynamic charts, `http://creativecommons.org/licenses/by-nc/3.0/deed.en_US`
   * [DataTables](http://datatables.net/) was used to create data tables.
   * Notable gems:
