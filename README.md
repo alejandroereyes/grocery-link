@@ -1,11 +1,11 @@
 [![Build Status](https://travis-ci.org/alejandroereyes/grocery-link.svg?branch=master)](https://travis-ci.org/alejandroereyes/grocery-link)    [![Code Climate](https://codeclimate.com/github/alejandroereyes/grocery-link/badges/gpa.svg)](https://codeclimate.com/github/alejandroereyes/grocery-link)    [![Test Coverage](https://codeclimate.com/github/alejandroereyes/grocery-link/badges/coverage.svg)](https://codeclimate.com/github/alejandroereyes/grocery-link/coverage)
 
 # Grocery Link
-  A web REST API for grocery retailers to upload their product data and for developers to access.
+  A web REST API for grocery retailers to upload their product data and for developers to access that data through HTTP Requests. Built using the [Rails](http://rubyonrails.org/) MVC framework  and using a [PostgreSQL](http://www.postgresql.org/) database.
 
 ## Link
-  [groceryLink](www.grocerylink.io)
-  * example user: [user@example.com](www.grocerylink.io)
+  [groceryLink](http://grocerylink.io)
+  * example user: [user@example.com](http://grocerylink.io)
   * example password: password
 
 ## Process
@@ -34,9 +34,10 @@
   * run `rake test` in the terminal to run locally.
 
 ## Dependancies
-  * [Materializecss](http://materializecss.com/) was used to create style
+  * [Materializecss](http://materializecss.com/) was used to create most of the styling.
   * [Canvas.JS](http://canvasjs.com/) was used to create dynamic charts, `http://creativecommons.org/licenses/by-nc/3.0/deed.en_US`
   * [DataTables](http://datatables.net/) was used to create data tables.
+  * [React](https://facebook.github.io/react/index.html) was used to run and display reports.
   * Notable gems:
     * `fiagro`
     * `codeclimate-test-reporter`
