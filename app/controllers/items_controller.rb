@@ -53,7 +53,7 @@ class ItemsController < ApplicationController
           @item.update_attribute :tags, row['tags'].split(',')
           @item.save
           @category = row['category'].titleize
-          ItemHelp.help_csv_save(current_retailer_id, @item, {'price'=> row['price'], 'product_id'=> row['product_id']}, @category)
+          ItemHelp.help_csv_save(current_retailer_id, @item, price_n_product_id_from(row), @category)
         end
       end
       new_count = Item.count
@@ -78,5 +78,9 @@ class ItemsController < ApplicationController
 
     def price_params
       params.require(:item).permit(:price, :product_id,)
+    end
+
+    def price_n_product_id_from(row)
+      { 'price'=> row['price'], 'product_id'=> row['product_id'] }
     end
 end
