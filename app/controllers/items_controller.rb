@@ -47,14 +47,11 @@ class ItemsController < ApplicationController
         if row['name'] && row['price']
           @item = Item.new
           ['name', 'brand', 'ingredients', 'description', 'total_servings',
-           'tags', 'servings_unit', 'weight', 'upc', 'manufacturer'].each do |key|
-            if key == 'tags'
-              @item.update_attribute :tags, row['tags'].split(',')
-            else
-              @item[key.to_sym] = row[key]
-            end
-            @item.save
+           'servings_unit', 'weight', 'upc', 'manufacturer'].each do |key|
+            @item[key.to_sym] = row[key]
           end
+          @item.update_attribute :tags, row['tags'].split(',')
+          @item.save
           @category = row['category'].titleize
           ItemHelp.help_csv_save(current_retailer_id, @item, {'price'=> row['price'], 'product_id'=> row['product_id']}, @category)
         end
