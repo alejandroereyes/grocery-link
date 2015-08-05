@@ -3,7 +3,7 @@
     <div class='nav-wrapper'>
       <ul><li><a href='/' class='home-logo'>grocery<span>Link</span></a></li></ul>
       <a href="#" data-activates="mobile-demo" class="right button-collapse"><i class="material-icons">menu</i></a>
-      <ul class='hide-on-med-and-down'><li class=<%= active_if(docs_path) %>><%= link_to 'Docs', docs_path %></li>
+      <ul class='hide-on-med-and-down'><li class=<%= active_if(docs_path) %>><%= link_to 'Docs', docs_path, :id=> "doc-path" %></li>
       </ul>
 
       <% if user_is_admin? %><%= render partial: 'partials/adnav' %><% end %>
