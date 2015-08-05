@@ -41,7 +41,9 @@ end
 
 group :development, :test do
   gem 'pry'
+  gem 'cucumber-rails', :require => false
 end
+
 gem "codeclimate-test-reporter", {:group=>:test, :require=>nil}
 gem 'bullet', group: :development
 gem 'bootstrap-sass'
