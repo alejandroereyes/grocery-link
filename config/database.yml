@@ -83,6 +83,3 @@ production:
   database: grocery_link_production
   username: grocery_link
   password: <%= ENV['GROCERY_LINK_DATABASE_PASSWORD'] %>
-
-cucumber:
-  <<: *test

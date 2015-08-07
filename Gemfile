@@ -41,8 +41,6 @@ end
 
 group :development, :test do
   gem 'pry'
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
 end
 
 gem "codeclimate-test-reporter", {:group=>:test, :require=>nil}
