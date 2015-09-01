@@ -2,10 +2,10 @@ class AdminController < ApplicationController
   before_filter :only_admins
 
   def dashboard
-    @store_count = current_stores.count
-    @item_count = current_retailer.first.items.count
+    @store_count    = current_stores.count
+    @item_count     = current_retailer.first.items.count
     @organics_count = current_retailer.first.organics.count
-    @organics_mix = (@organics_count.to_f/@item_count.to_f).round(2)
+    @organics_mix   = (@organics_count.to_f/@item_count.to_f).round(2)
     @all_org_counts = Retailer.all_organic_counts
   end
 
