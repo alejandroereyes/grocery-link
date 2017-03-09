@@ -4,23 +4,23 @@
   A web REST API for grocery retailers to upload their product data and for developers to access that data through HTTP Requests. Built using the [Rails](http://rubyonrails.org/) MVC framework  and using a [PostgreSQL](http://www.postgresql.org/) database.
 
 ## Link
-  [groceryLink](http://grocerylink.io)
-  * example user: [user@example.com](http://grocerylink.io)
+  [groceryLink](https://grocerylink.herokuapp.com)
+  * example user: [user@example.com](https://grocerylink.herokuapp.com)
   * example password: password
 
 ## Process
   [My Trello Board with UMLs & wireframes](https://trello.com/b/j78ElnvB/alejandro-reyes-grocerylink)
 
 ## Example Method calls
-  * To request all categories; returns all categories: `http://grocerylink.io/api/lookup/categories?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6`
+  * To request all categories; returns all categories: `https://grocerylink.herokuapp.com/api/lookup/categories?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6`
 
-  * To request all retailers; returns all retailers: `http://grocerylink.io/api/lookup/retailers?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6`
+  * To request all retailers; returns all retailers: `https://grocerylink.herokuapp.com/api/lookup/retailers?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6`
 
-  * To request all retailers in area; returns all retailers in city & state: `http://grocerylink.io/api/lookup/retailersinarea?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6&city=Austin&state=TX`
+  * To request all retailers in area; returns all retailers in city & state: `https://grocerylink.herokuapp.com/api/lookup/retailersinarea?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6&city=Austin&state=TX`
 
-  * To request by id; returns all retailer's that carry the item and price for each retailer: `http://grocerylink.io/api/products/byid?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6&id=4`
+  * To request by id; returns all retailer's that carry the item and price for each retailer: `https://grocerylink.herokuapp.com/api/products/byid?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6&id=4`
 
-  * To request products that match by name; returns each product's info and retailers that carry the item: `http://grocerylink.io/api/products/byname?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6&name=Amy`
+  * To request products that match by name; returns each product's info and retailers that carry the item: `https://grocerylink.herokuapp.com/api/products/byname?client_id=b9a39a944f59043f&secret_id=79b0a9758fa7712a3444bfab75241f2c04b1bf786fb0f88e27eb415211cf19f6&name=Amy`
 
 ## Set up
   1. clone repo

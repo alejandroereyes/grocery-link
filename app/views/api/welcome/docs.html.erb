@@ -16,7 +16,7 @@
       <div class="collapsible-body">
         <div class='left-doc'>
           <p class='call-desc'><span class='title-for-doc'>Response: </span>Returns a list of all categories<br>
-          <span class='title-for-doc'>Request URL: </span><code>http://grocerylink.io/api/lookup/categories?client_id=CLIENT_ID&secret_id=SECRET_ID</code></p>
+          <span class='title-for-doc'>Request URL: </span><code>https://grocerylink.herokuapp.com/api/lookup/categories?client_id=CLIENT_ID&secret_id=SECRET_ID</code></p>
         </div>
         <div class='right-doc'>
           <p><%= image_tag('all_categories', size: '250') %></p>
@@ -28,7 +28,7 @@
       <div class="collapsible-body">
         <div class='left-doc'>
           <p class='call-desc'><span class='title-for-doc'>Response: </span>Returns a list of all retailers available<br>
-          <span class='title-for-doc'>Request URL: </span><code>http://grocerylink.io/api/lookup/retailers?client_id=CLIENT_ID&secret_id=SECRET_ID</code></p>
+          <span class='title-for-doc'>Request URL: </span><code>https://grocerylink.herokuapp.com/api/lookup/retailers?client_id=CLIENT_ID&secret_id=SECRET_ID</code></p>
         </div>
         <div class='right-doc retialer-list'>
           <p><%= image_tag('all_retailers', height: '300', width: '250') %></p>
@@ -40,7 +40,7 @@
       <div class="collapsible-body">
         <div class='left-doc'>
           <p class='call-desc'><span class='title-for-doc'>Response: </span>Returns a list of all retailers available in the city and state given<br>
-          <span class='title-for-doc'>Request URL: </span><code>http://grocerylink.io/api/lookup/retailersinarea?client_id=CLIENT_ID&secret_id=SECRET_ID&city=CITY&state=STATE</code></p>
+          <span class='title-for-doc'>Request URL: </span><code>hhttps://grocerylink.herokuapp.com/api/lookup/retailersinarea?client_id=CLIENT_ID&secret_id=SECRET_ID&city=CITY&state=STATE</code></p>
         </div>
         <div class='right-doc stores-in-area-pic'>
           <p><%= image_tag('stores_in_area', height: '310', width: '225') %></p>
@@ -52,7 +52,7 @@
       <div class="collapsible-body">
         <div class='left-doc'>
           <p class='call-desc'><span class='title-for-doc'>Response: </span>Returns a list of all products that match by name. Each item object contains a retailers key with all the retailers that carry the item in an array.<br>
-          <span class='title-for-doc'>Request URL: </span><code>http://grocerylink.io/api/products/byname?client_id=CLIENT_ID&secret_id=SECRET_ID&name=NAME</code></p>
+          <span class='title-for-doc'>Request URL: </span><code>https://grocerylink.herokuapp.com/api/products/byname?client_id=CLIENT_ID&secret_id=SECRET_ID&name=NAME</code></p>
         </div>
         <div class='right-doc'>
           <p><%= image_tag('item_by_name', height: '320', width: '220') %></p>
@@ -64,7 +64,7 @@
       <div class="collapsible-body">
         <div class='left-doc'>
           <p class='call-desc'><span class='title-for-doc'>Response: </span>Returns a list of retailers that carry the item and their specific pricing.<br>
-          <span class='title-for-doc'>Request URL: </span><code>http://grocerylink.io/api/products/byid?client_id=CLIENT_ID&secret_id=SECRET_ID&id=ID</code></p>
+          <span class='title-for-doc'>Request URL: </span><code>https://grocerylink.herokuapp.com/api/products/byid?client_id=CLIENT_ID&secret_id=SECRET_ID&id=ID</code></p>
         </div>
         <div class='right-doc'>
           <p><%= image_tag('product_by_id', height: '240', width: '260') %></p>
@@ -73,5 +73,3 @@
     </li>
   </ul>
 </div>
-
-
