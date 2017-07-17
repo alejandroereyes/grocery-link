@@ -12,6 +12,8 @@
 !/log/.keep
 /tmp
 /coverage/.resultset.json
+/coverage/assets/*
+/coverage/index.html
 
 # Ignore application configuration
 /config/application.yml

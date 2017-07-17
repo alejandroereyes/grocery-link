@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-lookup_link = InformationMachineApi::LookupController.new ENV['client_id'], ENV['client_secret']
-products_link = InformationMachineApi::ProductsController.new ENV['client_id'], ENV['client_secret']
+lookup_link = InformationMachineApi::LookupController.new ENV['IM_CLIENT_ID'], ENV['IM_CLIENT_SECRET']
+products_link = InformationMachineApi::ProductsController.new ENV['IM_CLIENT_ID'], ENV['IM_CLIENT_SECRET']
 
 all_categories = lookup_link.lookup_get_categories
 all_categories['result'].each do |cat|

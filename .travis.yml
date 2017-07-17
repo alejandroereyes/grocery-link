@@ -1,7 +1,7 @@
 language: ruby
 script:
-  - rake db:create db:migrate db:test:prepare
-  - rake
+  - bundle exec rake db:create db:migrate db:test:prepare
+  - bundle exec rake test
 rvm:
   - 2.2.0
 addons:
